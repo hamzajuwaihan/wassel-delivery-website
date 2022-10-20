@@ -22,6 +22,9 @@ return new class extends Migration
             $table->decimal('longitude', 11, 8);
             $table->decimal('delivery_fee');
             $table->enum('status', ['Available', 'Closed','Busy'])->default('Available');
+            $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')
+            ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

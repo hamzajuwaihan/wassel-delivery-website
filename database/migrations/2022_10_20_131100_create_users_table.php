@@ -19,9 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->default('0');
-            $table->string('type')->default('user');
             $table->string('password');
-            $table->rememberToken();
+            $table->string('type')->default('user');
+            $table->foreignId('restaurant_id')->nullable()->constrained('restaurants')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
