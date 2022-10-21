@@ -30,11 +30,11 @@ class HomeController extends Controller
         // $allUsers = User::get()->where('role', 'user');
         // $allProducts = Product::all()->count();
         if ($user == 'admin') {
-            return view('admin.AdminDashboard', [
+            return view('adminpages.index', [
                 'user'=>$user
             ]);
         } else if($user == 'owner'){
-            return view('owner.OwnerDashboard',[
+            return view('resturantpages.home',[
                 'user'=>$user
             ]);
         }else{

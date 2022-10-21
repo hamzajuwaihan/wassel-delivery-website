@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('location')->nullable();
-            $table->float('latitude', 10, 6);
-            $table->float('longitude', 10, 6);
-            $table->decimal('delivery_fee');
+            $table->string('phone')->default('0');
+             $table->float('latitude', 10, 6)->default('0');
+            $table->float('longitude', 10, 6)->default('0');
+            $table->decimal('delivery_fee')->default('0');
             $table->enum('status', ['Available', 'Closed','Busy'])->default('Available');
             $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')
             ->onDelete('cascade');
