@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user()->type;
+        // $allUsers = User::get()->where('role', 'user');
+        // $allProducts = Product::all()->count();
+        if ($user == 'admin') {
+            return view('admin.AdminDashboard', [
+                'user'=>$user
+            ]);
+        } else if($user == 'owner'){
+            return view('owner.OwnerDashboard',[
+                'user'=>$user
+            ]);
+        }else{
+            return redirect('/');
+        }
     }
 }
