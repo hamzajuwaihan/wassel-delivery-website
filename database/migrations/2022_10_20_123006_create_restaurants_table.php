@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('location')->nullable();
             $table->string('phone')->default('0');
-            $table->decimal('latitude', 11, 8)->default('0');
-            $table->decimal('longitude', 11, 8)->default('0');
+             $table->float('latitude', 10, 6)->default('0');
+            $table->float('longitude', 10, 6)->default('0');
             $table->decimal('delivery_fee')->default('0');
             $table->enum('status', ['Available', 'Closed','Busy'])->default('Available');
             $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')
