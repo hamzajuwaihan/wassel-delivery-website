@@ -15,7 +15,8 @@ class SessionController extends Controller
     public function __invoke(Request $request)
     {
         // $request->session()->put('location', [$request->get('latitude'),$request->get('longitude')]);
-        session()->push('latitude', $request->get('latitude'));
-
+        // gLongitude
+        session()->put('latitude', $request->latitude);
+        session()->put('Longitude', $request->Longitude);
     }
 }

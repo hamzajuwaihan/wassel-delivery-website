@@ -1,1 +1,1 @@
-{{ $user }}
+{{ dd(session()->all())}}

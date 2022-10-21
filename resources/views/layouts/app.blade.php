@@ -47,7 +47,7 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"
             data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container"><a class="navbar-brand d-inline-flex" href="{{ route('index') }}"><img
                         class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span
@@ -91,6 +91,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page"
                                         href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('restaurants.index') }}">Restuarants</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
