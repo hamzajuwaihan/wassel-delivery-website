@@ -18,13 +18,15 @@ class Restaurant extends Model
      */
     protected $fillable = [
         'name',
-        'phone',
         'image',
         'location',
+        'phone',
         'latitude',
         'longitude',
+        'delivery_fee',
+        'status',
         'category_id',
-
+        
 
     ];
 

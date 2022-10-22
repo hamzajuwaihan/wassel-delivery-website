@@ -6,34 +6,32 @@ use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantsController extends Controller
 {
-     //
-     /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+    //
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $restaurants = Restaurant::orderBy('id','desc')->paginate(5);
-        
+        $restaurants = Restaurant::orderBy('id', 'desc')->paginate(5);
+
         return view('adminpages.resturant', compact('restaurants'));
-
-        
-
     }
-//     public function restaurantsGet()
-// {
-//     $restaurants = DB::table('restaurants')
-//         ->join('categories', 'categories.id', '=', 'restaurants.category_id')
-//         ->select('restaurants.*', 'categories.name')
-//         ->get()->toArray();    	
-//         echo '<pre>';
-//         print_r($restaurants);
-//         exit;
-// }
+    //     public function restaurantsGet()
+    // {
+    //     $restaurants = DB::table('restaurants')
+    //         ->join('categories', 'categories.id', '=', 'restaurants.category_id')
+    //         ->select('restaurants.*', 'categories.name')
+    //         ->get()->toArray();    	
+    //         echo '<pre>';
+    //         print_r($restaurants);
+    //         exit;
+    // }
 
 
     /**
@@ -44,14 +42,14 @@ class RestaurantsController extends Controller
     public function create()
     {
         $restaurants = DB::table('restaurants')
-        ->join('categories', 'categories.id', '=', 'restaurants.category_id')
-        ->select('restaurants.*', 'categories.name')
-        ->get()->toArray();    	
+            ->join('categories', 'categories.id', '=', 'restaurants.category_id')
+            ->select('restaurants.*', 'categories.name')
+            ->get()->toArray();
         echo '<pre>';
         print_r($restaurants);
         exit;
-        $restaurants=Restaurant::all();
-        $categories=Category::all();
+        $restaurants = Restaurant::all();
+        $categories = Category::all();
         return view('adminpages.add-resturant');
     }
 
@@ -64,23 +62,45 @@ class RestaurantsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required', 
+            'name' => 'required',
+            'phone' => 'required',
             'location' => 'required',
+            // 'latitude' => 'required',
+            // 'longitude' => 'required',
+            // 'delivery_fee' => 'delivery_fee',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            
         ]);
 
-        $input = $request->all();
+        $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $file_name);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }
 
-        Restaurant::create($input);
-        Category::create($input);
-
+        $restaurant = new Restaurant();
+        // Category::create($input);
+        // $restaurant->name = $request->name;
+        // $restaurant->phone = $request->phone;
+        // $restaurant->location = $request->location;
+        // $restaurant->latitude = $request->latitude;
+        // $restaurant->longitude = $request->longitude;
+        // $restaurant->delivery_fee = $request->delivery_fee;
+        // $restaurant->image = $file_name;
+        // $restaurant->category_id = $request->category;
+        $id = DB::table('restaurants')->insertGetId(
+            [
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'location' => $request->location,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'delivery_fee' => $request->delivery_fee,
+                'image' => $file_name,
+                'category_id'=>$request->category
+            ]
+        );
+        DB::table('menus')->insert([
+            ['restaurant_id' => $id],
+        ]);
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'Restaurant created successfully.');
     }
@@ -102,11 +122,11 @@ class RestaurantsController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit($id)
     {
-        $restaurant = Restaurant::where('id',$id)->first();
+        $restaurant = Restaurant::where('id', $id)->first();
         return view('adminpages.edit-resturant', [
-            'restaurant'=> $restaurant
+            'restaurant' => $restaurant
         ]);
     }
 
@@ -119,11 +139,11 @@ class RestaurantsController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        $restaurant = Restaurant::where('id',$id)->first();
+        $restaurant = Restaurant::where('id', $id)->first();
         $request->validate([
-            'name' => 'required', 
+            'name' => 'required',
             'location' => 'required',
-            
+
         ]);
 
         $input = $request->all();
@@ -141,7 +161,6 @@ class RestaurantsController extends Controller
 
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'restaurant updated successfully');
-        
     }
 
     /**
@@ -152,11 +171,10 @@ class RestaurantsController extends Controller
      */
     public function destroy($id)
     {
-        $restaurant = Restaurant::where('id',$id)->first();
+        $restaurant = Restaurant::where('id', $id)->first();
         $restaurant->delete();
 
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'restaurant deleted successfully');
     }
-    
 }

@@ -89,12 +89,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label for="category-id-icon"name="category_id">category name</label>
-                                <select name="category_id">
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="Delivery_fee">Delivery fee</label>
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">JD</span>
+                                        <input type="number" id="Delivery_fee" name="delivery_fee" class="form-control"
+                                            placeholder="" value="0" step="0.01" />
+                                    </div>
+                                </div>
+                                <label for="category-id-icon"name="category">category name</label>
+                                <select name="category">
                                     
-                                    <option name="category_id" value="1">main food</option>
-                                    <option name="category_id" value="2">sweets</option>
-                                    <option name="category_id" value="3">drinks</option>
+                                    <option name="category" value="1">main food</option>
+                                    <option name="category" value="2">sweets</option>
+                                    <option name="category" value="3">drinks</option>
                                   
                                   </select>
                                   
