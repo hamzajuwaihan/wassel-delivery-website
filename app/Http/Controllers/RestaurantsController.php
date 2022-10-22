@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Category;
+use App\Models\Menu;
+
 use Illuminate\Http\Request;
 
 class RestaurantsController extends Controller
@@ -79,7 +81,8 @@ class RestaurantsController extends Controller
         }
 
         Restaurant::create($input);
-        Category::create($input);
+        // Category::create($input);
+        // Menu::create($input);
 
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'Restaurant created successfully.');

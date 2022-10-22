@@ -118,7 +118,9 @@
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">Restaurants</span>
-                          <h3 class="card-title mb-2">628</h3>
+                          <h3 class="card-title mb-2">{{\DB::table('restaurants')->count()}}
+
+                          </h3>
                         </div>
                       </div>
                     </div>
@@ -148,7 +150,8 @@
                             </div>
                           </div>
                           <span class="d-block mb-1">Category</span>
-                          <h3 class="card-title text-nowrap mb-2">4</h3>
+                          <h3 class="card-title text-nowrap mb-2">{{\DB::table('categories')->count()}}
+                          </h3>
                         </div>
                       </div>
                     </div>
@@ -177,14 +180,14 @@
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">Users</span>
-                          <h3 class="card-title text-nowrap mb-2">857</h3>
+                          <h3 class="card-title text-nowrap mb-2">{{\DB::table('users')->count()}}</h3>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row d-flex align-items-start ">
+              {{-- <div class="row d-flex align-items-start ">
                 <!-- Order Statistics -->
                 <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
                   <div class="card h-100">
@@ -392,5 +395,5 @@
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
+    <!-- / Layout wrapper --> --}}
     @endsection

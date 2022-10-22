@@ -89,8 +89,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <label for="category-id-icon"name="category_id">category name</label>
-                                <select name="category_id">
+                                <label for="category-id-icon"name="category_id">category name</label><br>
+                                <select name="category_id" style="width:200px; height:30px">
                                     
                                     <option name="category_id" value="1">main food</option>
                                     <option name="category_id" value="2">sweets</option>

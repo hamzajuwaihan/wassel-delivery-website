@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('restaurant_id')->constrained('restaurants')->onUpdate('cascade')
-            ->onDelete('cascade');
+            ->onDelete('cascade')->default('0');
+            $table->string('name');
             $table->timestamps();
         });
     }
