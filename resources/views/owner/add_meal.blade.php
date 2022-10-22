@@ -1,9 +1,9 @@
-@extends('resturantpages.layout.master')
+@extends('owner.layout.master')
 @section('content')
 <div class="col-md-8 offset-md-2 col-12 mt-5" style="margin-left: 370px;" >
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Add Meal</h4>
+                <h4 class="card-title">Add Meal {{ $restaurant  }}</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">

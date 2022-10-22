@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantsController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\MealsController;
 //restaurant owner controller
 use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
@@ -78,9 +78,7 @@ Route::get('/home', function () {
 Route::get('/menu', function () {
     return view('resturantpages.menu');
 });
-Route::get('/add_meal', function () {
-    return view('resturantpages.add_meal');
-});
+
 Route::get('/add-offers', function () {
     return view('resturantpages.add-offers');
 });
@@ -127,3 +125,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/session', SessionController::class);
 Route::resource('restaurants',ShowRestaurantsController::class);
 
+Route::resource('addMeal',MealsController::class);

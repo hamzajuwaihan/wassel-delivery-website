@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class RestaurantsOwnerController extends Controller
    
     // $users = User::orderBy('id','desc')->paginate(5);
     $restaurant =$restaurant[0];
-    return view('resturantpages.restaurantview', compact('restaurant'));
+    return view('owner.OwnerDashboard', compact('restaurant'));
 
     }  
 
@@ -96,9 +97,11 @@ class RestaurantsOwnerController extends Controller
     public function edit( $id)
     {
         $restaurant = Restaurant::where('id',$id)->first();
-        return view('resturantpages.edit-resturant', [
+        return view('owner.edit', [
             'restaurant'=> $restaurant
         ]);
+           
+    
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('resturantpages.layout.master')
+@extends('owner.layout.master')
 @section('content')
 <div class="content-wrapper ">
 <div class="page-heading" style="margin-left: 300px; width:1200px">
