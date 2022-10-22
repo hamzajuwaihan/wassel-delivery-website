@@ -5,7 +5,11 @@
             <div class="page-title">
                 <h3 class="m-5">All Category</h3>
             </div>
-
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
             <div class="row d-flex align-items-center justify-content-start" style="flex-wrap: wrap">
 
 
@@ -85,12 +89,21 @@
                                                 <h6 class="mb-0">Restaurants 4</h6>
 
                                             </div>
+                  
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> 
+                             <form style="display: inline-block" method="POST"action="{{ route('category.destroy', $category->id) }}"onsubmit="return confirm('Are you sure?');">
+                    <a class="btn btn-primary" href="{{ route('category.edit', $category->id) }}" >Edit</a>
+                      <!-- Delete button -->
+                      @csrf
+                      @method('DELETE')
+                        <button class="btn text-primary">Delete<i class="far fa-trash-alt"></i></button>
+                    </form> 
                         </div>
                     </div>
+
                     <!--/ Food and Dining -->
                 @endforeach
 

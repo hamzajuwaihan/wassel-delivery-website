@@ -18,6 +18,13 @@
             </ul>
         </div>
     @endif
+
+    {{-- @foreach ( $restaurants as $restaurant)
+
+    <label for="first-name-icon">{{ $restaurant->name }}</label>
+    @endforeach --}}
+
+
                     <form class="form form-vertical" method="POST" action="{{ route('dashboardrestaurants.store') }}"
                         enctype="multipart/form-data">
                         @csrf
@@ -70,7 +77,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                
                                 <div class="form-group has-icon-left">
                                         <label for="location-id-icon">LATITUDE</label>
                                         <div class="position-relative">
@@ -82,27 +89,30 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <select>
+                                <label for="category-id-icon"name="category_id">category name</label>
+                                <select name="category_id">
                                     
-                                    <option value="actual value 1">Display Text 1</option>
-                                    <option value="actual value 2">Display Text 2</option>
-                                    <option value="actual value 3">Display Text 3</option>
+                                    <option name="category_id" value="1">main food</option>
+                                    <option name="category_id" value="2">sweets</option>
+                                    <option name="category_id" value="3">drinks</option>
+                                  
                                   </select>
                                   
+
+
                                 {{-- <div class="form-group has-icon-left">
-                                        <label for="location-id-icon">category_id</label>
+                                        <label for="category-id-icon">category_id</label>
                                         <div class="position-relative">
-                                            <input type="text" name="category_id" value="" class="form-control" placeholder="location"
-                                                id="location-id-icon">
+                                            <input type="text" name="category_id" value="" class="form-control" placeholder="category"
+                                                id="category-id-icon">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
                                             </div>
                                         </div>
                                     </div>
-                                </div> --}}
-       
-                          
+                                </div>
+        --}}
+                          </div>
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="password-id-icon">Image</label>

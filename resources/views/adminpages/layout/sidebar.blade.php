@@ -128,7 +128,7 @@
               <ul class="menu-sub">
         
                 <li class="menu-item">
-                  <a href="/add-category" class="menu-link"  >
+                  <a href="/add-categories" class="menu-link"  >
                     <div data-i18n="Basic">Add Category</div>
                   </a>
                 </li>

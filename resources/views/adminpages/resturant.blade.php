@@ -52,6 +52,7 @@
                                     <td>{{ $restaurant->location }}</td>
                                     <td>{{ $restaurant->longitude }}</td>
                                     <td>{{ $restaurant->latitude }}</td>
+                                   
                                     <td>
                                          <!-- edit button -->
                                         

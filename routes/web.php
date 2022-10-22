@@ -37,7 +37,7 @@ Route::get('/resturant', function () {
 Route::get('/add_resturant', function () {
     return view('adminpages.add_resturant');
 });
-Route::get('/add-category', function () {
+Route::get('/add-categories', function () {
     return view('adminpages.add-category');
 });
 Route::get('/category', function () {

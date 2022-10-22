@@ -5,18 +5,28 @@
             <div class="card-header">
                 <h4 class="card-title">Add Category</h4>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-vertical" method="POST" action=""
+                    <form class="form form-vertical" method="POST" action="{{ route('category.store') }}" 
                         enctype="multipart/form-data">
-                    
+                        @csrf
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="Category-name-icon">Category Name</label>
                                         <div class="position-relative">
-                                            <input type="text" name="Categoryname" value="" class="form-control" placeholder="Category Name"
+                                            <input type="text" name="name" value="" class="form-control" placeholder="Category Name"
                                                 id="Category-name-icon">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
@@ -25,7 +35,7 @@
                                     </div>
                                 </div>
                              
-                                <div class="col-12">
+                                {{-- <div class="col-12">
 
                                     <div class="form-group has-icon-left">
                                         <label for=" category-description-id-icon">Category Description</label>
@@ -61,7 +71,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Add</button>
                                 </div>

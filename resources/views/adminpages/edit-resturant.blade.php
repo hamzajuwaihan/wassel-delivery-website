@@ -65,6 +65,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group has-icon-left">
+                                        <label for="latitude-id-icon">latitude</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="latitude" value="{{ $restaurant->latitude }}" class="form-control" placeholder="latitude"
+                                                id="latitude-id-icon">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group has-icon-left">
+                                        <label for="longitude">longitude</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="longitude" value="{{ $restaurant->longitude }}" class="form-control" placeholder="longitude"
+                                                id="longitude">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
        
                           
                                 <div class="col-12">

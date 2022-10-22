@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class RestaurantsController extends Controller
@@ -19,7 +20,20 @@ class RestaurantsController extends Controller
         $restaurants = Restaurant::orderBy('id','desc')->paginate(5);
         
         return view('adminpages.resturant', compact('restaurants'));
+
+        
+
     }
+//     public function restaurantsGet()
+// {
+//     $restaurants = DB::table('restaurants')
+//         ->join('categories', 'categories.id', '=', 'restaurants.category_id')
+//         ->select('restaurants.*', 'categories.name')
+//         ->get()->toArray();    	
+//         echo '<pre>';
+//         print_r($restaurants);
+//         exit;
+// }
 
 
     /**
@@ -29,6 +43,15 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
+        $restaurants = DB::table('restaurants')
+        ->join('categories', 'categories.id', '=', 'restaurants.category_id')
+        ->select('restaurants.*', 'categories.name')
+        ->get()->toArray();    	
+        echo '<pre>';
+        print_r($restaurants);
+        exit;
+        $restaurants=Restaurant::all();
+        $categories=Category::all();
         return view('adminpages.add-resturant');
     }
 
@@ -56,6 +79,7 @@ class RestaurantsController extends Controller
         }
 
         Restaurant::create($input);
+        Category::create($input);
 
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'Restaurant created successfully.');

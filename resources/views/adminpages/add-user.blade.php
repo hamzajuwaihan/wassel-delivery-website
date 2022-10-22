@@ -83,7 +83,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for=" gender-id-icon"> type</label>
                                         <div class="position-relative">
@@ -94,6 +94,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div> --}}
+                                <br>
+                                <div class="col-12">
+                                <select name="type" style="width:200px; height:30px;">
+                                   
+                                    <option value="admin">admin</option>
+                                    <option value="admin">owner</option>
+                                    <option value="user">user</option>
+                                    
+                                  </select> 
                                 </div>
                                 <!-- <div class="col-12">
                                     <div class="form-group has-icon-left">
