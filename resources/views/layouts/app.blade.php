@@ -12,7 +12,10 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+  />
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,19 +27,19 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicons/favicon-16x16.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicons/favicon.ico') }}">
+    <link rel="manifest" href="{{ asset('assets/img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -47,10 +50,9 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"
-            data-navbar-on-scroll="data-navbar-on-scroll">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container"><a class="navbar-brand d-inline-flex" href="{{ route('index') }}"><img
-                        class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span
+                        class="d-inline-block" src="{{ asset('assets/img/gallery/logo.svg') }}" alt="logo" /><span
                         class="text-1000 fs-3 fw-bold ms-2 text-gradient">foodwaGon</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -62,7 +64,7 @@
                                 class="fas fa-map-marker-alt text-warning mx-2"></i><span class="fw-normal">Current
                                 Location </span><span id="location">Mirpur 1 Bus Stand, Dhaka</span></p>
                     </div>
-                   
+
                     <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
                         <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
                             <input class="form-control border-0 input-box bg-100" type="search"
@@ -73,6 +75,7 @@
                     </form>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -108,21 +111,28 @@
                                     </form>
                                 </li>
                             </ul>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
+                            
                         @endguest
+                        <li class="nav-item">
+                            <a class="position-relative" href="{{ route('cart.index') }}">
+                                <i class="bi bi-bag-fill fs-2 text-gradient"></i>
+                          
+                                <span
+                                  class="
+                                    position-absolute
+                                    top-0
+                                    start-100
+                                    translate-middle
+                                    badge
+                                    rounded-pill
+                                    bg-danger
+                                  "
+                                >
+                                  0
+                                  <span class="visually-hidden">unread messages</span>
+                                </span>
+                              </a>
+                        </li>
                     </ul>
 
                 </div>
@@ -130,7 +140,7 @@
         </nav>
 
         <body>
-            
+
             @yield('content')
             <!-- ============================================-->
             <!-- <section> begin ============================-->
@@ -341,15 +351,15 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="\vendors\@popperjs\popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
+    <script src="{{ asset('\vendors\@popperjs\popper.min.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendors/is/is.min.js') }}"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
-    <script src="script.js"></script>
+    <script src="{{ asset('script.js') }}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
         rel="stylesheet">
 </body>

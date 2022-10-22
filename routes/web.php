@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ShowRestaurantsController;
 use Illuminate\Support\Facades\Auth;
@@ -102,7 +103,7 @@ Route::get('/profile', function () {
 Route::resource('users', UserController::class);
 Route::resource('dashboardrestaurants', RestaurantsController::class);
 Route::resource('category', CategoryController::class);
-
+Route::resource('cart',CartController::class);
 
 
 Auth::routes();
