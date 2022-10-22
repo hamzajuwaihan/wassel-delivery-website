@@ -1,0 +1,237 @@
+.cart-btn {
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+    border: none;
+    padding-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+}
+
+.cart-btn:hover {
+    background-color: #45a049;
+}
+
+.cart-totals {
+    width: 50% !important;
+}
+
+td:nth-child(5)>input {
+    margin-left: 0 !important;
+}
+
+input[type="text"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+table {
+    border: 1px solid #e2e2e2;
+}
+
+@media only screen and (max-width: 993px) {
+    .coupon-section {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .apply-coupon {
+        display: flex;
+        text-align: left !important;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .apply-coupon input[type="text"] {
+        width: 49% !important;
+    }
+
+    .apply-coupon button {
+        width: 49% !important;
+    }
+
+    .coupon-section {
+        display: flex;
+
+    }
+
+    .update-cart {
+        width: 100%;
+        text-align: right;
+    }
+
+    .update-cart button {
+        width: 100%;
+
+    }
+}
+
+/*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+@media only screen and (max-width: 992px) {
+    .cart-totals {
+        width: 100% !important;
+    }
+
+    .product-remove,
+    tr td {
+        text-align: right;
+    }
+
+    .cart .table {
+        vertical-align: middle !important;
+    }
+
+    /* Force table to not be like tables anymore */
+    .cart table,
+    .cart thead,
+    .cart tbody,
+    .cart th,
+    .cart td,
+    .cart tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .cart thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1rem 0;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 40%;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    td input {
+        text-align: right;
+    }
+
+    /*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+
+
+    .cart td:nth-of-type(2):before {
+        content: "Product:";
+    }
+
+    .cart td:nth-of-type(3):before {
+        content: "Product:";
+    }
+
+    .cart td:nth-of-type(4):before {
+        content: "Price:";
+    }
+
+    .cart td:nth-of-type(5):before {
+        content: "Quantity:";
+    }
+
+    td:nth-child(5)>input {
+        margin-left: auto !important;
+    }
+
+    /* td:nth-of-type(5):before {
+
+    } */
+
+    .cart td:nth-of-type(6):before {
+        content: "Subtotal:";
+    }
+
+
+    /*
+    td:nth-of-type(7):before {
+        content: "Date of Birth";
+    }
+
+    td:nth-of-type(8):before {
+        content: "Dream Vacation City";
+    }
+
+    td:nth-of-type(9):before {
+        content: "GPA";
+    }
+
+    td:nth-of-type(10):before {
+        content: "Arbitrary Data";
+    } */
+    .filter{
+        order:2 !important;
+        margin-top:50px !important;
+    }
+    .products-grid{
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .coupon-section {
+        display: flex !important;
+        justify-content: space-between;
+    }
+
+}
+
+/* products */
+
+.price {
+    font-weight: bold;
+}
+
+
+/* contact-us */
+.border-contact{
+    padding: 20px;
+    box-shadow: 5px 5px 15px 15px rgba(135, 135, 135, 0.186);
+    border-radius: 5px;
+}
+
+
+.contact-img{
+    width: 100%;
+    min-height: 500px;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+     background: url("contact.jpg") no-repeat; 
+     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* End contact-us */
+
