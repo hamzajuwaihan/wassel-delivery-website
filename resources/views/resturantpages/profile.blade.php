@@ -1,11 +1,23 @@
 @extends('resturantpages.layout.master')
 @section('content')
         <!-- Content wrapper -->
+
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="content-wrapper">
             <!-- Content -->
             <div class="page-heading" style="margin-left: 300px; width:1200px">
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h3 class="fw-bold py-3 mb-4">Profile Edit</h3>
+              <h3 class="fw-bold py-3 mb-4">Restaurant Edit</h3>
 
               <div class="row">
                 <div class="col-md-12">
@@ -49,31 +61,21 @@
                       <form id="formAccountSettings" method="POST" onsubmit="return false">
                         <div class="row">
                           <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">First Name</label>
+                            <label for="name" class="form-label"> Name</label>
                             <input
                               class="form-control"
                               type="text"
-                              id="firstName"
-                              name="firstName"
+                              id="name"
+                              name="name"
                               value=""
                               autofocus
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input class="form-control" type="text" name="lastName" id="lastName" value="" />
+                            <label for="location" class="form-label">Location</label>
+                            <input class="form-control" type="text" name="location" id="location" value="" />
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              value=""
-                              placeholder=""
-                            />
-                          </div>
+                          
                         
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="phoneNumber">Phone Number</label>
@@ -88,12 +90,17 @@
                               />
                             </div>
                           </div>
+                         
                           <div class="mb-3 col-md-6">
-                            <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="" />
-                          </div>
-                        
-                    
+                            <label class="form-label" for="status">Restaurant Status</label><br>
+                          <select name="status">
+                                    
+                            <option name="status" value="Available">Available</option>
+                            <option name="status" value="Closed">Closed</option>
+                            <option name="status" value="Busy">Busy</option>
+                          
+                          </select>
+                        </div>
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save changes</button>

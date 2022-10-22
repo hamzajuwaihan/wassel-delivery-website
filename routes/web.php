@@ -8,6 +8,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantsController;
 use App\Http\Controllers\CategoryController;
 
+//restaurant owner controller
+use App\Http\Controllers\RestaurantsOwnerController;
+use App\Http\Controllers\RestaurantOwnerMenuController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +68,7 @@ Route::get('/profile', function () {
 
 
 
+
 // resturant dashboard
 
 Route::get('/home', function () {
@@ -95,13 +100,23 @@ Route::get('/profile', function () {
     return view('resturantpages.profile');
 });
 
-
+Route::get('/restaurantview', function () {
+    return view('resturantpages.restaurantview');
+});
 
 
 
 Route::resource('users', UserController::class);
 Route::resource('dashboardrestaurants', RestaurantsController::class);
 Route::resource('category', CategoryController::class);
+
+
+Route::resource('restaurantview', RestaurantsOwnerController::class);
+// Route::resource('menu', RestaurantOwnerMenuController::class);
+
+
+
+
 
 
 

@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menu_id')->constrained('menus')->onUpdate('cascade')->onDelete('cascade');
+           
             // $table->foreignId('cat_id')->references('id')->on('categories')
             // ->onDelete('cascade');
+            $table->foreignId('menu_id')->constrained('menus')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+          
             $table->string('name');
             $table->string('image');
             $table->decimal('price');

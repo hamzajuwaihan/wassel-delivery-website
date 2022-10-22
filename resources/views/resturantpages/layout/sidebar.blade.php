@@ -86,11 +86,24 @@
               <span class="menu-header-text">profile</span>
             </li>
             <li class="menu-item">
-              <a href="/profile" class="menu-link ">
-              <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="profile">??</div> <!-- resturant name  -->
+              <a href="" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Restaurant Info</div>
               </a>
-             
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="/restaurantview" class="menu-link">
+                    <div data-i18n="Connections">View  Restaurant</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="" class="menu-link">
+                    <div data-i18n="Account">Edit Restaurants</div>
+                  </a>
+                </li>
+
+                
+              </ul>
             </li>
            
 
