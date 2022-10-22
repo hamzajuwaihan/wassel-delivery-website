@@ -94,16 +94,20 @@ class RestaurantsOwnerController extends Controller
      * @param  \App\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit($id)
     {
         $restaurant = Restaurant::where('id',$id)->first();
+        $categories = Category::all();
+        
         return view('owner.edit', [
-            'restaurant'=> $restaurant
+            'restaurant'=> $restaurant,
+            
+
         ]);
            
     
     }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -113,11 +117,14 @@ class RestaurantsOwnerController extends Controller
      */
     public function update(Request $request,  $id)
     {
+        
         $restaurant = Restaurant::where('id',$id)->first();
         $request->validate([
             'name' => 'required', 
             'location' => 'required',
-            
+            'phone'=>'required',
+            'delivery_fee'=>'required',
+            'status'=>'required'
         ]);
 
         $input = $request->all();

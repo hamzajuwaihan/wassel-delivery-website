@@ -109,7 +109,6 @@ Route::resource('users', UserController::class);
 Route::resource('dashboardrestaurants', RestaurantsController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('cart',CartController::class);
-
 Route::resource('restaurantview', RestaurantsOwnerController::class);
 // Route::resource('menu', RestaurantOwnerMenuController::class);
 

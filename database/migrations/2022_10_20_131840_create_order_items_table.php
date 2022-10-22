@@ -23,7 +23,7 @@ return new class extends Migration
             ->onDelete('cascade');
       
             $table->integer('amount');
-            $table->timestamps();
+
         });
     }
 
