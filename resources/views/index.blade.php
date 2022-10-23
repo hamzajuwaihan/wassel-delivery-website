@@ -740,39 +740,46 @@
             <div class="row justify-content-center g-0">
                 <div class="col-xl-9">
                     <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
-                        <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Get In Touch</h5>
+                        <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-4">Get In Touch</h5>
+                        <a href="contactForm"><h5>Have an Query? We're here to help</h5></a>
+                        {{-- <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary"
+                            href="#!"><i class="fas fa-chevron-right ms-2"> </i></a></div> --}}
+                </div>
+ 
                     </div>
+                   
                     <div class="row">
                         <div class="col-sm-6 col-md-3 mb-6">
 
                             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/smiley-removebg-preview.png"
                                     height="112" alt="..." />
-                                <h5 class="mt-4 fw-bold">Select location</h5>
-                                <p class="mb-md-0">Choose the location where your food will be delivered.</p>
+                                {{-- <h5 class="mt-4 fw-bold">Select location</h5>
+                                <p class="mb-md-0">Choose the location where your food will be delivered.</p> --}}
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 mb-6">
                             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/confused-removebg-preview.png"
                                     height="112" alt="..." />
-                                <h5 class="mt-4 fw-bold">Choose order</h5>
-                                <p class="mb-md-0">Check over hundreds of menus to pick your favorite food</p>
+                                {{-- <h5 class="mt-4 fw-bold">Choose order</h5>
+                                <p class="mb-md-0">Check over hundreds of menus to pick your favorite food</p> --}}
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 mb-6">
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/sad-removebg-preview.png"
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/unhappy-icon-13-removebg-preview.png"
                                     height="112" alt="..." />
-                                <h5 class="mt-4 fw-bold">Pay advanced</h5>
+                                {{-- <h5 class="mt-4 fw-bold">Pay advanced</h5>
                                 <p class="mb-md-0">It's quick, safe, and simple. Select several methods of payment
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3 mb-6">
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/meals.png"
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/416487-200-removebg-preview.png"
                                     height="112" alt="..." />
-                                <h5 class="mt-4 fw-bold">Enjoy meals</h5>
-                                <p class="mb-md-0">Food is made and delivered directly to your home.</p>
+                                {{-- <h5 class="mt-4 fw-bold">Enjoy meals</h5>
+                                <p class="mb-md-0">Food is made and delivered directly to your home.</p> --}}
                             </div>
                         </div>
+                   
                     </div>
                 </div>
             </div>
@@ -1073,7 +1080,7 @@
     <!-- ============================================-->
 
 
-    <section>
+    {{-- <section>
         <div class="bg-holder"
             style="background-image:url(assets/img/gallery/cta-one-bg.png);background-position:center;background-size:cover;">
         </div>
@@ -1133,7 +1140,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- ============================================-->
@@ -1154,9 +1161,9 @@
                                             Crispy Sandwiches</span></h1>
                                     <p class="fs-1">Enjoy the large size of sandwiches. Complete your meal with
                                         the perfect slice of sandwiches.</p>
-                                    <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
+                                    {{-- <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
                                             href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1190,9 +1197,9 @@
                                             class="text-primary">Fried Chicken</span></h1>
                                     <p class="fs-1">Get the best fried chicken smeared with a lip smacking lemon
                                         chili flavor. Check out best deals for fried chicken.</p>
-                                    <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
+                                    {{-- <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
                                             href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1226,9 +1233,9 @@
                                             Pizza?</span></h1>
                                     <p class="fs-1">Pair up with a friend and enjoy the hot and crispy pizza
                                         pops. Try it with the best deals.</p>
-                                    <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
+                                    {{-- <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6"
                                             href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

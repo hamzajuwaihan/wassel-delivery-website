@@ -185,7 +185,7 @@
             </li>
 
             <!-- Support -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Support </span></li>
+            {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Support </span></li>
             <!-- Forms -->
             <li class="menu-item">
               <a href="/Complains" class="menu-link ">
@@ -202,6 +202,6 @@
               
             </li>
             
-          </ul>
+          </ul> --}}
         </aside>
         <!-- / Menu -->
