@@ -15,15 +15,15 @@
                     <!-- Account -->
                     <div class="card-body">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
-                        <img
+                        {{-- <img
                           src="../adminassets/img/avatars/1.png"
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
                           width="100"
                           id="uploadedAvatar"
-                        />
-                        <div class="button-wrapper">
+                        /> --}}
+                        {{-- <div class="button-wrapper">
                           <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                             <span class="d-none d-sm-block">Upload new photo</span>
                             <i class="bx bx-upload d-block d-sm-none"></i>
@@ -41,28 +41,48 @@
                           </button>
 
                           <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                        </div>
+                        </div> --}}
                       </div>
                     </div>
                     <hr class="my-0" />
+
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div class="card-body">
-                      <form id="formAccountSettings" method="POST" onsubmit="return false">
+                      <form id="formAccountSettings" method="POST" action="{{ route('adminprofile.update', $user->id) }}">
+                        @csrf
+                        @method('PUT')
                         <div class="row">
                           <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">First Name</label>
+                            <label for="firstName" class="form-label">
+                              {{-- {{ $user->name }} --}}
+                            </label>
                             <input
                               class="form-control"
                               type="text"
                               id="firstName"
-                              name="firstName"
-                              value=""
+                              name="name"
+                              value="{{Auth::user()->name}}"
                               autofocus
                             />
                           </div>
-                          <div class="mb-3 col-md-6">
+                          {{-- <div class="mb-3 col-md-6">
                             <label for="lastName" class="form-label">Last Name</label>
                             <input class="form-control" type="text" name="lastName" id="lastName" value="" />
-                          </div>
+                          </div> --}}
                           <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">E-mail</label>
                             <input
@@ -70,7 +90,7 @@
                               type="text"
                               id="email"
                               name="email"
-                              value=""
+                              value="{{Auth::user()->email}}"
                               placeholder=""
                             />
                           </div>
@@ -82,21 +102,23 @@
                               <input
                                 type="text"
                                 id="phoneNumber"
-                                name="phoneNumber"
+                                name="phone"
                                 class="form-control"
-                                placeholder=""
+                                value="{{Auth::user()->phone}}"
                               />
                             </div>
                           </div>
-                          <div class="mb-3 col-md-6">
+                          {{-- <div class="mb-3 col-md-6">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" class="form-control" id="address" name="address" placeholder="" />
-                          </div>
+                          </div> --}}
                         
                     
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                          
+                          
                           <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                         </div>
                       </form>
@@ -106,7 +128,7 @@
 
 
 <!--we can remove it -->
-                  <div class="card">
+                  {{-- <div class="card">
                      <h5 class="card-header">Delete Account</h5>
                      <div class="card-body">
                       <div class="mb-3 col-12 mb-0">
@@ -129,7 +151,7 @@
                         </div>
                         <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
                       </form>
-                    </div>
+                    </div> --}}
 <!--end delete form -->
 
                   </div>

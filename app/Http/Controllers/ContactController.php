@@ -16,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contactForm');
+        $messages = Contact::orderBy('id','desc')->paginate(5);
+        return view('adminpages.view-messages', compact('messages'));
     }
   
     /**
@@ -38,4 +39,25 @@ class ContactController extends Controller
         return redirect()->back()
                          ->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
     }
+
+
+    public function destroy($id)
+    {
+        $message = Contact::where('id', $id)->first();
+        $message->delete();
+
+        return redirect()->route('view-messages.index')
+            ->with('success', 'complaint deleted successfully');
+    }
+
+
+    public function show($id)
+    {
+        $message = Contact::where('id', $id)->first();
+        return view('adminpages.showcomplaint', compact('message'));
+    }
+
+
+
+    
 }

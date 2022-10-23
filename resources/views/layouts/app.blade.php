@@ -82,12 +82,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                                 </li>
+                               
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}"><b>{{ __('Register') }}</b></a>
                                 </li>
+                                 <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ route('restaurants.index') }}"><b>Restuarants</b></a>
+                        </li>
                             @endif
                         @else
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">

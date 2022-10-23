@@ -13,6 +13,7 @@ use App\Http\Controllers\MealsController;
 use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +60,9 @@ Route::get('/add-user', function () {
 Route::get('/users', function () {
     return view('adminpages.users');
 });
+Route::get('/view-messages', function () {
+    return view('adminpages.view-messages');
+});
 
 Route::get('/order-status', function () {
     return view('adminpages.add-user');
@@ -66,7 +70,7 @@ Route::get('/order-status', function () {
 Route::get('/all-orders', function () {
     return view('adminpages.all-orders');
 });
-Route::get('/profile', function () {
+Route::get('/adminprofile', function () {
     return view('adminpages.profile');
 });
 
@@ -84,9 +88,9 @@ Route::get('/menu', function () {
     return view('resturantpages.menu');
 });
 
-Route::get('/add-offers', function () {
-    return view('resturantpages.add-offers');
-});
+// Route::get('/add-offers', function () {
+//     return view('resturantpages.add-offers');
+// });
 Route::get('/add-category', function () {
     return view('resturantpages.add-category');
 });
@@ -115,6 +119,8 @@ Route::resource('dashboardrestaurants', RestaurantsController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('cart',CartController::class);
 Route::resource('restaurantview', RestaurantsOwnerController::class);
+Route::resource('view-messages', ContactController::class);
+Route::resource('adminprofile', ProfileAdminController::class);
 // Route::resource('menu', RestaurantOwnerMenuController::class);
 
 

@@ -16,11 +16,11 @@
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <button class="nav-link active mb-3" id="nav-home-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                                        aria-selected="true"><i class="fas fa-motorcycle me-2"></i>Delivery</button>
-                                    <button class="nav-link mb-3" id="nav-profile-tab" data-bs-toggle="tab"
+                                        aria-selected="true">Search</button>
+                                    {{-- <button class="nav-link mb-3" id="nav-profile-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-profile" type="button" role="tab"
                                         aria-controls="nav-profile" aria-selected="false"><i
-                                            class="fas fa-shopping-bag me-2"></i>Pickup</button>
+                                            class="fas fa-shopping-bag me-2"></i>Pickup</button> --}}
                                 </div>
                             </nav>
                             <div class="tab-content mt-3" id="nav-tabContent">
@@ -28,11 +28,10 @@
                                     aria-labelledby="nav-home-tab">
                                     <form class="row gx-2 gy-2 align-items-center">
                                         <div class="col">
-                                            <div class="input-group-icon"><i
-                                                    class="fas fa-map-marker-alt text-danger input-box-icon"></i>
+                                            <div class="input-group-icon"><i class="fas fa-search input-box-icon text-primary"></i>
                                                 <label class="visually-hidden" for="inputDelivery">Address</label>
                                                 <input class="form-control input-box form-foodwagon-control"
-                                                    id="inputDelivery" type="text" placeholder="Enter Your Address" />
+                                                    id="inputDelivery" type="text" placeholder="Search Your Favourite Food" />
                                             </div>
                                         </div>
                                         <div class="d-grid gap-3 col-sm-auto">
@@ -734,8 +733,52 @@
             </div>
         </div>
     </section>
+<!-- ======================contact======================-->
+    <section class="py-0 bg-primary-gradient">
 
+        <div class="container">
+            <div class="row justify-content-center g-0">
+                <div class="col-xl-9">
+                    <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
+                        <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">Get In Touch</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 mb-6">
 
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/smiley-removebg-preview.png"
+                                    height="112" alt="..." />
+                                <h5 class="mt-4 fw-bold">Select location</h5>
+                                <p class="mb-md-0">Choose the location where your food will be delivered.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 mb-6">
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/confused-removebg-preview.png"
+                                    height="112" alt="..." />
+                                <h5 class="mt-4 fw-bold">Choose order</h5>
+                                <p class="mb-md-0">Check over hundreds of menus to pick your favorite food</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 mb-6">
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/sad-removebg-preview.png"
+                                    height="112" alt="..." />
+                                <h5 class="mt-4 fw-bold">Pay advanced</h5>
+                                <p class="mb-md-0">It's quick, safe, and simple. Select several methods of payment
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 mb-6">
+                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/meals.png"
+                                    height="112" alt="..." />
+                                <h5 class="mt-4 fw-bold">Enjoy meals</h5>
+                                <p class="mb-md-0">Food is made and delivered directly to your home.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end of .container-->
+
+    </section>
     <!-- ============================================-->
     <!-- <section> begin ============================-->
     <section class="py-8 overflow-hidden">

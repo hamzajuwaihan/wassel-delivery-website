@@ -86,12 +86,16 @@
               <span class="menu-header-text">Admin</span>
             </li>
             <li class="menu-item">
-              <a href="/profile" class="menu-link ">
+              <a href="{{ route('adminprofile.edit', Auth::user()->id) }}"
+                class="menu-link ">
               <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="profile">Admin Info</div>
               </a>
+
              
             </li>
+        
+
            
 
                    
@@ -170,7 +174,7 @@
             </li>
 
             <!-- Extended components -->
-            <li class="menu-item">
+            {{-- <li class="menu-item">
               <a href="" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-copy"></i>
                 <div data-i18n="Extended UI">Orders</div>
@@ -184,20 +188,20 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
 
             <!-- Support -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Support </span></li>
             <!-- Forms -->
-            <li class="menu-item">
+            {{-- <li class="menu-item">
               <a href="/Complains" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Complains</div>
-              </a>
+              </a> --}}
               
             </li>
             <li class="menu-item">
-              <a href="" class="menu-link ">
+              <a href="/view-messages" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Layouts">Contact</div>
               </a>

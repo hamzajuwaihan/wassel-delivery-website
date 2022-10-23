@@ -130,11 +130,11 @@
                     <div data-i18n="Account">Add Meals</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                {{-- <li class="menu-item">
                   <a href="/add-offers" class="menu-link">
                     <div data-i18n="Account">Add offers</div>
                   </a>
-                </li>
+                </li> --}}
         
                 
               </ul>
