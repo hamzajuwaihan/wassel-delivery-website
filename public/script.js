@@ -70,3 +70,9 @@ findMyStateI();
 //     // parses JSON response into native JavaScript objects
 // }
 postData('http://127.0.0.1:8000/session')
+function ShowHideDiv() {    
+    var user_type = document.getElementById("type");
+    var choose_resturant = document.getElementById("choose");
+    choose_resturant.style.display = user_type.value == "owner" ? "block" : "none";
+//    
+}

@@ -1,5 +1,11 @@
 @extends('adminpages.layout.master')
 @section('content')
+
+
+<script type="text/javascript">
+
+</script>
+
 <div class="col-md-8 offset-md-2 col-12 mt-5" style="margin-left: 370px;" >
         <div class="card">
             <div class="card-header">
@@ -95,16 +101,33 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <br>
+                              
                                 <div class="col-12">
-                                <select name="type" style="width:200px; height:30px;">
+                                    <label for="user_type">User Type</label>
+                                    <div class="position-relative">
+                                <select name="type" style="width:200px; height:30px;" id = "type" onchange = "ShowHideDiv()">
                                    
                                     <option value="admin">admin</option>
-                                    <option value="admin">owner</option>
+                                    <option value="owner">owner</option>
                                     <option value="user">user</option>
                                     
                                   </select> 
                                 </div>
+                                </div>
+
+                                <div class="col-12" id="choose" style="display: none ;">
+                                    <label for="user_type">Choose Resturant</label>
+                                    <div class="position-relative">
+                                    <select  style=" width:200px; height:30px;">
+                                        {{-- <option value="">select resturant</option> --}}
+                                        <option value="1">resturant-1</option>
+                                        <option value="2">resturant-2</option>
+                                        <option value="3">resturant-3</option>
+                                    </select>
+                                </div>
+                                </div>
+
+                                
                                 <!-- <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="password-id-icon">Password</label>

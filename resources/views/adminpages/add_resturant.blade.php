@@ -97,7 +97,7 @@
                                             placeholder="" value="0" step="0.01" />
                                     </div>
                                 </div>
-                                <label for="category-id-icon"name="category">category name</label>
+                                <label for="category-id-icon"name="category">category name</label><br>
                                 <select name="category">
                                     
                                     <option name="category" value="1">main food</option>
@@ -122,19 +122,23 @@
         --}}
                           </div>
                                 <div class="col-12">
-                                    <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Image</label>
+                                    <div class="form-group has-icon-left mx-4">
+                                        <label for="password-id-icon">Upload Image</label>
                                         <div class="position-relative">
                                             <label for="image">
-                                                <img src="" alt="profile_photo"
+                                                <img src="../adminassets/img/avatars/default.png" class="d-block rounded"
+                                                height="100"
+                                                width="100"
+                                                id="uploadedAvatar" alt="profile_photo"
                                                     style="cursor: pointer">
                                                 <input type="file" id="image" name="image" class="form-control d-none">
                                             </label>
                                         </div>
                                     </div>
+                                    
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary me-1 mb-1">Add</button>
+                                    <button type="submit" class="btn btn-primary me-4 mb-3">Add</button>
                                 
                                 </div>
                             </div>

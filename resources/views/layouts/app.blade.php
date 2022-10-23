@@ -65,14 +65,14 @@
                                 Location </span><span id="location">Mirpur 1 Bus Stand, Dhaka</span></p>
                     </div>
 
-                    <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+                    {{-- <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
                         <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
                             <input class="form-control border-0 input-box bg-100" type="search"
                                 placeholder="Search Food" aria-label="Search" />
                         </div>
                         <button class="btn btn-white shadow-warning text-warning" type="submit"> <i
                                 class="fas fa-user me-2"></i>Login</button>
-                    </form>
+                    </form> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         
@@ -80,30 +80,30 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><b>{{ __('Register') }}</b></a>
                                 </li>
                             @endif
                         @else
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page"
-                                        href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                        href="{{ route('home') }}"><b><font color="orange"> Hello&nbsp;{{ Auth::user()->name }}</font></b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page"
-                                        href="{{ route('restaurants.index') }}">Restuarants</a>
+                                        href="{{ route('restaurants.index') }}"><b>Restuarants</b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                         document.getElementById('logout-form').submit();"><b>
+                                       {{ __('Logout') }}</b>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

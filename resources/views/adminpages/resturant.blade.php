@@ -27,7 +27,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Restaurant Logo</th>
+                                <th style="width: 100px;">Restaurant Logo</th>
                                 <th>Restaurant Name</th>
                                 <th>Restaurant Phone</th>
                                 <th>Restaurant Location</th>
@@ -35,7 +35,7 @@
                                 <th>latitude</th>
 
                                 {{-- <th>Restaurant Website</th> --}}
-                                <th>Adjustments</th>
+                                <th style="width: 250px;">Adjustments</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +43,7 @@
                                 <tr>
                                     <td>{{ $restaurant->id }}</td>
                                     
-                                        <td><img src="/images/{{ $restaurant->image }}" width="180px" height="150px;"></td>
+                                        <td><img src="/images/{{ $restaurant->image }}" width="100px" height="100px;"></td>
                                      <!-- <img class="avatar me-2" style="object-fit: cover" width="50" height="50"
                                             src=""> -->
                                    
@@ -53,7 +53,7 @@
                                     <td>{{ $restaurant->longitude }}</td>
                                     <td>{{ $restaurant->latitude }}</td>
                                    
-                                    <td>
+                                    <td style="width: 250px;">
                                          <!-- edit button -->
                                         
 
