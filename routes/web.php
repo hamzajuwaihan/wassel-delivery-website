@@ -12,7 +12,7 @@ use App\Http\Controllers\MealsController;
 //restaurant owner controller
 use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,11 @@ use App\Http\Controllers\RestaurantOwnerMenuController;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+
+Route::get('/contactForm', function () {
+    return view('contactForm');
+});
+
 
 
 
@@ -125,3 +130,9 @@ Route::post('/session', SessionController::class);
 Route::resource('restaurants',ShowRestaurantsController::class);
 
 Route::resource('addMeal',MealsController::class);
+
+
+
+//contact form
+Route::get('contact-us', [ContactController::class, 'index']);
+Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
