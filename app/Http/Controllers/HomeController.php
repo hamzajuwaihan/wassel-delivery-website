@@ -34,9 +34,7 @@ class HomeController extends Controller
                 'user'=>$user
             ]);
         } else if($user == 'owner'){
-            return view('resturantpages.home',[
-                'user'=>$user
-            ]);
+            return redirect(route('restaurantview.index'));
         }else{
             return redirect('/');
         }
