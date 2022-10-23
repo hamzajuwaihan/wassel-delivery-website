@@ -60,48 +60,51 @@
 
     <div class="container mt-5 mb-5">
 
-        
 
-        <div>
-            <div class="card mb-3  " style="height: 350px">
-                <div class="row g-0 ">
-                    <div class="col-md-4">
-                        <img src="{{ asset('assets/img/gallery/toffes-cake.png') }}" class="w-100 rounded-start"
-                            alt="..." style="height: 350px">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row g-0">
-                            <div class="col-12">
-                                <div class="card-body">
-                                    <div class="card-body ps-0">
-                                        <h5 class="fs-5 fw-bold text-1000 text-truncate mb-1">Meal Name</h5>
-                                        <div>
-                                            {{-- //meal price --}}
-                                        </div><span class="text-1000 fw-bold fs-3 mb-2">$4.00</span>
+        @foreach ($meals as $meal)
+            <div>
+                <div class="card mb-3  " style="height: 350px">
+                    <div class="row g-0 ">
+                        <div class="col-md-4">
+                            <img src="{{ asset('assets/img/gallery/toffes-cake.png') }}" class="w-100 rounded-start"
+                                alt="..." style="height: 350px">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="card-body">
+                                        <div class="card-body ps-0">
+                                            <h5 class="fs-5 fw-bold text-1000 text-truncate mb-1">{{ $meal->name }}</h5>
+                                            <div>
+                                                {{-- //meal price --}}
+                                            </div><span class="text-1000 fw-bold fs-3 mb-2">$4.00</span>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row g-0 mt-5" >
-                            <div class="col align-self-end ">
-                                <form action="" class="m-2">
-                                    <input type="number" name="" id="" class="form-control col-3 mb-3 mt-4">
+                            <div class="row g-0 mt-5">
+                                <div class="col align-self-end ">
+                                    <form action="" class="m-2">
+                                        <input type="number" name="" id=""
+                                            class="form-control col-3 mb-3 mt-4">
 
-                                    <div class="d-grid gap-2">
-                                        <a class="btn btn-lg btn-danger" href="#!" role="button">
-                                            Order now
-                                        </a>
-                                    </div>
+                                        <div class="d-grid gap-2">
+                                            <a class="btn btn-lg btn-danger" href="#!" role="button">
+                                                Order now
+                                            </a>
+                                        </div>
 
-                                </form>
+                                    </form>
+                                </div>
                             </div>
+
+
                         </div>
-
-
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
+
     </div>
 @endsection

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Meal;
 use App\Models\Restaurant;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class ShowRestaurantsController extends Controller
 {
@@ -15,32 +18,9 @@ class ShowRestaurantsController extends Controller
      */
     public function index()
     {
-        /*
-       SELECT id, 
-( 6371 * 
-    ACOS( 
-        COS( RADIANS( latitude ) ) * 
-        COS( RADIANS( 32.0448774 ) ) * 
-        COS( RADIANS( 35.7079124 ) - 
-        RADIANS( longitude ) ) + 
-        SIN( RADIANS( latitude ) ) * 
-        SIN( RADIANS( 32.0448774) ) 
-    ) 
-) 
-AS distance FROM restaurants HAVING distance <= 6 ORDER BY distance ASC
-       */
-        $restaurants = DB::table('restaurants')->selectRaw('id,name, image,location,delivery_fee,status,
-      ( 6371 * 
-          ACOS( 
-              COS( RADIANS( latitude ) ) * 
-              COS( RADIANS('. session()->get('latitude')  .') ) * 
-              COS( RADIANS('. session()->get('Longitude') .') - 
-              RADIANS( longitude ) ) + 
-              SIN( RADIANS( latitude ) ) * 
-              SIN( RADIANS( '.session()->get('latitude').') ) 
-          ) 
-      ) 
-      AS distance')->having('distance', '<=', 6000)->where('status','=','Available')->orderBy('distance')->get();
+
+
+        $restaurants = Restaurant::all();
         return view('restaurants', [
             'restaurants' => $restaurants
         ]);
@@ -74,9 +54,17 @@ AS distance FROM restaurants HAVING distance <= 6 ORDER BY distance ASC
      */
     public function show($id)
     {
-        $restaurant = Restaurant::find($id)->first();
-        return view('SingleRestaurant',[
-            'restaurant'=>$restaurant
+        $restaurant = Restaurant::find($id);
+        
+        $menu = Menu::find($id);
+        
+        // $menu = Menu::get()->where('restaurant_id','=',$id);
+        
+        $meals = Meal::get()->where('menu_id','=',$menu->restaurant_id);
+        
+        return view('SingleRestaurant', [
+            'restaurant' => $restaurant,
+            'meals'=>$meals
         ]);
     }
 

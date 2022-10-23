@@ -7,7 +7,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
                     <a href="{{ route('restaurants.show',$restaurant->id) }}">
                         <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100"
-                                src="assets/img/gallery/food-world.png" alt="..." />
+                                src="./images/{{ $restaurant->image }}" alt="..." />
                             <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i
                                         class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20%
                                         off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i
