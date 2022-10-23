@@ -14,7 +14,7 @@ class Menu extends Model
     // {
     //     return $this->belongsTo(Restaurant::class);
     // }
- 
+    public $timestamps = false;
     public function Restaurant()
     {
         return $this->hasMany(Restaurant::class);

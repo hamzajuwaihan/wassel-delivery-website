@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Category extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+    public $timestamps = false;
     protected $fillable = [
         'name',
      
