@@ -62,7 +62,6 @@ class MealsController extends Controller
         ]);
 
         $file_name = time() . '.' . request()->image->getClientOriginalExtension();
-
         request()->image->move(public_path('images'), $file_name);
 
         $meal = new Meal;

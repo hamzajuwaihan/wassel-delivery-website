@@ -14,9 +14,7 @@ class Menu extends Model
     // {
     //     return $this->belongsTo(Restaurant::class);
     // }
-    protected $fillable = [
-        'restaurant_id ',
-    ];
+    public $timestamps = false;
     public function Restaurant()
     {
         return $this->hasMany(Restaurant::class);
