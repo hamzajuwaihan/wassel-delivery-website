@@ -61,7 +61,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Wassel</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -187,13 +187,7 @@
             <!-- Support -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Support </span></li>
             <!-- Forms -->
-            <li class="menu-item">
-              <a href="/Complains" class="menu-link ">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Complains</div>
-              </a>
-              
-            </li>
+         
             <li class="menu-item">
               <a href="" class="menu-link ">
                 <i class="menu-icon tf-icons bx bx-detail"></i>

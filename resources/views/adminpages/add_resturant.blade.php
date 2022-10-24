@@ -133,7 +133,12 @@
                                                     style="cursor: pointer">
                                                 <input type="file" id="image" name="image" class="form-control d-none">
                                             </label>
-                                        </div>
+                                        </div><br>
+                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="file" id="upload" name="image" class="form-control d-none">
+                                          </label>
                                     </div>
                                     
                                 </div>

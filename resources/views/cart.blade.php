@@ -16,26 +16,50 @@
 
                 </tr>
             </thead>
+
             <tbody>
 
                 @if (session()->has('order'))
                     @foreach ($meals as $meal)
                         <tr>
                             <td class="product-remove">
-                                <form action="" method="">
-                                    <button type="submit" name="delete" value="" class="btn"
-                                        onclick="return confirm('Are you sure you want to delete this product?')">
-                                        <i class="bi bi-x-circle text-warning"></i>
-                                    </button>
 
-                                </form>
+                                <button value="" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal{{ $meal->id }}">
+                                    <i class="bi bi-x-circle text-danger"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal{{ $meal->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" data-bs-backdrop="static" aria-hidden="true">
+                                    <form action="{{ route('DeleteFromCart') }}" method="post">
+                                        @csrf
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title fs-2" id="exampleModalLabel">delete meal</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <input type="hidden" name="meal_id" value="{{ $meal->id }}">
+                                                <div class="modal-body">
+                                                    are you sure ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary bg-black"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </td>
                             <td>
                                 <img src="./images/{{ $meal->image }}" alt="book image" srcset=""
                                     style="width:150px;height:150px;">
                             </td>
                             <td>
-                                <a href="{{ route('restaurants.show',$restaurant->id) }}" class="text-decoration-none">
+                                <a href="{{ route('restaurants.show', $restaurant->id) }}" class="text-decoration-none">
                                     {{ $meal->name }}
                                 </a>
                             </td>
@@ -45,9 +69,9 @@
                                 </bdi>
                             </td>
                             <td>
-                                
+                                {{-- {{ $meal->id }} --}}
                                 {{ session('order.meals')[$meal->id] }}
-                               
+
                             </td>
 
                         </tr>
@@ -73,65 +97,88 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
-                            <td>Subtotal</td>
-                            <td>
-                                <bdi>
+                        <form action="{{ route('checkout') }}" method="POST">
+                            @csrf
+                            <tr class="">
+                                <td>Subtotal</td>
+                                <td>
+                                    <bdi>
+                                        @if ($price !== 0)
+                                            ${{ $price }}
+                                        @else
+                                            0
+                                        @endif
+                                    </bdi>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td>Delivery fee</td>
+                                <td>
                                     @if ($price !== 0)
-                                        ${{ $price }}
+                                        <bdi>${{ $restaurant->delivery_fee }}</bdi>
                                     @else
                                         0
-                                        
                                     @endif
-                                </bdi>
-                            </td>
-                        </tr>
-                        <tr class="">
-                            <td>Delivery fee</td>
-                            <td>
-                                @if ($price !== 0)
-                                    <bdi>${{ $restaurant->delivery_fee }}</bdi>
-                                @else
-                                    0
-                                    
-                                @endif
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Shipping</td>
-                            <td>Shipping to 21, as'salt, as'saly, 156189.</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>
-                                @if ($price !== 0)
-                                    ${{ $price + $restaurant->delivery_fee }}
-                                @else
-                                    0
-                                    
-                                @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td>Shipping to 21, as'salt, as'saly, 156189.</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>
+                                    @if ($price !== 0)
+                                        ${{ $price + $restaurant->delivery_fee }}
+                                    @else
+                                        0
+                                    @endif
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-
-
-
-                                <form method='' action=''>
-                                    <input type="hidden" name="nondublicate" value="">
-                                    <input type="hidden" name="sum" value="">
-                                    <div class="d-grid gap-2">
-                                        <a class="btn btn-lg btn-danger" href="#!" role="button">
-                                            checkout
-                                        </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Note</td>
+                                <td>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px" name="note"></textarea>
+                                        <label for="floatingTextarea2">Note</label>
                                     </div>
-                                </form>
+                                </td>
+                            </tr>
+                            @if (session()->has('order.meals'))
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
+                                        <input type="hidden" name="total"
+                                            value="{{ $price + $restaurant->delivery_fee }}">
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-lg btn-danger" type="submit" role="button">
+                                                checkout
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="alert alert-warning" role="alert">
+                                            You must login in order to checkout !
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-lg btn-danger" type="submit" role="button" disabled>
+                                                checkout
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endif
 
-
-                            </td>
-                        </tr>
+                        </form>
                     </tbody>
                 </table>
             </div>

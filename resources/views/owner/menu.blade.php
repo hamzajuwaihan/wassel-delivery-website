@@ -17,7 +17,7 @@
                         <div>All Menu Table</div>
                         <a href="{{ route('addMeal.create') }}"><button class="btn btn-primary"
                                 style="margin-left:700px">Add Meal</button></a>
-                        <a href="/add-offers"><button class="btn btn-primary">Add Offers</button></a>
+                        {{-- <a href="/add-offers"><button class="btn btn-primary">Add Offers</button></a> --}}
 
                     </div>
                     <div class="card-body">
