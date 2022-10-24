@@ -19,7 +19,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->decimal('total');
             $table->enum('status', ['Pending', 'Preparing','on the way', 'delivered'])->default('Pending');
-            $table->text('note');
+            $table->text('note')->nullable();
+            $table->text('address');
+            $table->string('phone');
 
 
             $table->timestamps();

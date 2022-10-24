@@ -123,10 +123,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Shipping</td>
-                                <td>Shipping to 21, as'salt, as'saly, 156189.</td>
-                            </tr>
-                            <tr>
                                 <td>Total</td>
                                 <td>
                                     @if ($price !== 0)
@@ -143,6 +139,15 @@
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px" name="note"></textarea>
                                         <label for="floatingTextarea2">Note</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="" id="floatingTextarea3" style="height: 100px" name="address" required></textarea>
+                                        <label for="floatingTextarea3">Address</label>
                                     </div>
                                 </td>
                             </tr>
@@ -163,7 +168,7 @@
                                 <tr>
                                     <td colspan="2">
                                         <div class="alert alert-warning" role="alert">
-                                            You must login in order to checkout !
+                                            You must have meals in cart and logged in in order to checkout !
                                         </div>
                                     </td>
                                 </tr>

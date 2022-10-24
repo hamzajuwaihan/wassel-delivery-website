@@ -14,6 +14,8 @@ class order_detail extends Model
         'total',
         'status',
         'note',
+        'phone',
+        'address',
         'created_at',
         'updated_at',        
     ];

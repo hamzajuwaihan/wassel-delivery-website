@@ -172,12 +172,9 @@
               <ul class="menu-sub">
          
               <li class="menu-item">
-                  <a href="/add-order" class="menu-link">
-                    <div data-i18n="all order">Add Order</div>
-                  </a>
                 </li>
                 <li class="menu-item">
-                  <a href="/all-orders" class="menu-link">
+                  <a href="{{ route('add-order.index') }}" class="menu-link">
                     <div data-i18n="all order">View All Orders</div>
                   </a>
                 </li>
