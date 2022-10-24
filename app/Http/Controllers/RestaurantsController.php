@@ -23,7 +23,7 @@ class RestaurantsController extends Controller
         $restaurants = Restaurant::orderBy('id', 'desc')->paginate(20);
 
         return view('adminpages.resturant', compact('restaurants'))->with('i', (request()->input('page', 1) - 1) * 20);
-        ;
+        
     }
     //     public function restaurantsGet()
     // {

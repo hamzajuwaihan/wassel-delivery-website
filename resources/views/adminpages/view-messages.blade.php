@@ -35,7 +35,7 @@
                                 <th>User Email</th>
                                 
                                 <th>Subject</th>
-                                <th>Message</th>
+                             
                                 <th >Action</th>
                                 {{-- <th>??</th> --}}
                             </tr>
@@ -49,7 +49,7 @@
                                     <td>{{ $message->email }}</td>
                                    
                                     <td>{{ $message->subject }}</td>
-                                    <td>{{ $message->message }}</td>
+                                   
                                     
                                     <td>
                                         <!-- edit button -->
@@ -57,7 +57,7 @@
                                         <form style="display: inline-block" method="POST"
                                             action="{{ route('view-messages.destroy',$message->id) }}"onsubmit="return confirm('Are you sure?');">
 
-                                            <a class="btn btn-info" href="{{ route('view-messages.show', $message->id) }}">Edit</a>
+                                            <a class="btn btn-info" href="{{ route('view-messages.show', $message->id) }}">Show</a>
 
 
                                           <!-- Delete button -->
