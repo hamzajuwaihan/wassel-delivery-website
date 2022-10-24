@@ -16,6 +16,7 @@ use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DeleteFromCart;
+use App\Http\Controllers\NormalUserController;
 use App\Http\Controllers\OrderOwners;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\SearchController;
@@ -161,3 +162,5 @@ Route::get('/', [RestaurantIndexController::class, 'index'])->name('index');
 
 
 Route::resource('/add-order',OrderOwners::class);
+
+Route::resource('myaccount',NormalUserController::class);
