@@ -10,45 +10,51 @@
             <thead class="bg-white">
                 <tr>
                     <th colspan="2"></th>
-                    <th>Product</th>
+                    <th>Meal</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Subtotal</th>
+
                 </tr>
             </thead>
             <tbody>
 
-                <tr>
-                    <td class="product-remove">
-                        <form action="" method="">
-                            <button type="submit" name="delete" value="" class="btn"
-                                onclick="return confirm('Are you sure you want to delete this product?')">
-                                <i class="bi bi-x-circle"></i>
-                            </button>
+                @if (session()->has('order'))
+                    @foreach ($meals as $meal)
+                        <tr>
+                            <td class="product-remove">
+                                <form action="" method="">
+                                    <button type="submit" name="delete" value="" class="btn"
+                                        onclick="return confirm('Are you sure you want to delete this product?')">
+                                        <i class="bi bi-x-circle text-warning"></i>
+                                    </button>
 
-                        </form>
-                    </td>
-                    <td>
-                        <img src="" alt="book image" srcset="" style="width:150px;height:150px;">
-                    </td>
-                    <td>
-                        <a href="#" class="text-decoration-none">
-                        </a>
-                    </td>
-                    <td>
-                        <bdi>
+                                </form>
+                            </td>
+                            <td>
+                                <img src="./images/{{ $meal->image }}" alt="book image" srcset=""
+                                    style="width:150px;height:150px;">
+                            </td>
+                            <td>
+                                <a href="{{ route('restaurants.show',$restaurant->id) }}" class="text-decoration-none">
+                                    {{ $meal->name }}
+                                </a>
+                            </td>
+                            <td>
+                                <bdi>
+                                    ${{ $meal->price }}
+                                </bdi>
+                            </td>
+                            <td>
+                                
+                                {{ session('order.meals')[$meal->id] }}
+                               
+                            </td>
 
-                        </bdi>
-                    </td>
-                    <td>
+                        </tr>
+                    @endforeach
+                @endif
 
-                    </td>
-                    <td>
-                        <bdi>
 
-                        </bdi>
-                    </td>
-                </tr>
 
 
 
@@ -56,7 +62,7 @@
 
 
         </table>
-        <div class="container-fluid my-5">
+        <div class="container-fluid pd-5 mt-5">
             <div class="row">
                 <table class="col-4 ms-auto table  table-bordered cart-totals">
                     <thead>
@@ -70,7 +76,26 @@
                         <tr class="">
                             <td>Subtotal</td>
                             <td>
-                                <bdi></bdi>
+                                <bdi>
+                                    @if ($price !== 0)
+                                        ${{ $price }}
+                                    @else
+                                        0
+                                        
+                                    @endif
+                                </bdi>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>Delivery fee</td>
+                            <td>
+                                @if ($price !== 0)
+                                    <bdi>${{ $restaurant->delivery_fee }}</bdi>
+                                @else
+                                    0
+                                    
+                                @endif
+
                             </td>
                         </tr>
                         <tr>
@@ -80,6 +105,13 @@
                         <tr>
                             <td>Total</td>
                             <td>
+                                @if ($price !== 0)
+                                    ${{ $price + $restaurant->delivery_fee }}
+                                @else
+                                    0
+                                    
+                                @endif
+
                             </td>
                         </tr>
                         <tr>

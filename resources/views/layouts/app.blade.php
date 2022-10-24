@@ -12,10 +12,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-  />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -75,30 +72,30 @@
                     </form> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        
+
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}"><b>{{ __('Login') }}</b></a>
                                 </li>
-                               
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}"><b>{{ __('Register') }}</b></a>
                                 </li>
-                                 <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ route('restaurants.index') }}"><b>Restuarants</b></a>
-                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="{{ route('restaurants.index') }}"><b>Restuarants</b></a>
+                                </li>
                             @endif
                         @else
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page"
-                                        href="{{ route('home') }}"><b><font color="orange"> Hello&nbsp;{{ Auth::user()->name }}</font></b></a>
+                                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}"><b>
+                                            <font color="orange"> Hello&nbsp;{{ Auth::user()->name }}</font>
+                                        </b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page"
@@ -108,7 +105,7 @@
                                     <a class="nav-link" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();"><b>
-                                       {{ __('Logout') }}</b>
+                                            {{ __('Logout') }}</b>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -116,14 +113,14 @@
                                     </form>
                                 </li>
                             </ul>
-                            
+
                         @endguest
                         <li class="nav-item">
                             <a class="position-relative" href="{{ route('cart.index') }}">
                                 <i class="bi bi-bag-fill fs-2 text-gradient"></i>
-                          
+
                                 <span
-                                  class="
+                                    class="
                                     position-absolute
                                     top-0
                                     start-100
@@ -131,12 +128,15 @@
                                     badge
                                     rounded-pill
                                     bg-danger
-                                  "
-                                >
-                                  0
-                                  <span class="visually-hidden">unread messages</span>
+                                  ">
+                                    @if (session()->has('order'))
+                                        {{ count(session()->get('order.meals')) }}
+                                    @else
+                                        0
+                                    @endif
+
                                 </span>
-                              </a>
+                            </a>
                         </li>
                     </ul>
 

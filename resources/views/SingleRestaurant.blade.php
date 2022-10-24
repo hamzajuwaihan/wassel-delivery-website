@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-warning text-center" role="alert">{{ $errors->first() }}</div>
+    @endif
+    @if(session('success'))
+    <div class="alert alert-success text-center" role="alert">{{session('success')}}</div>
+@endif
     <div class="container mt-5">
         {{-- {{ $restaurant }} --}}
         <div class="row justify-content-center">
@@ -85,14 +91,16 @@
                             </div>
                             <div class="row g-0 mt-5">
                                 <div class="col align-self-end ">
-                                    <form action="" class="m-2">
-                                        <input type="number" name="" id=""
-                                            class="form-control col-3 mb-3 mt-4">
+                                    <form action="{{ route('AddToCart') }}" method="post" class="m-2">
+                                        @csrf
 
+                                        <input type="number" name="quantity" id="" min="1"
+                                            class="form-control col-3 mb-3 mt-4" value="1" required>
+                                        <input type="hidden" value="{{ $meal->id }}" name="mealId">
                                         <div class="d-grid gap-2">
-                                            <a class="btn btn-lg btn-danger" href="#!" role="button">
+                                            <button class="btn btn-lg btn-danger" role="button" type="submit">
                                                 Order now
-                                            </a>
+                                            </button>
                                         </div>
 
                                     </form>

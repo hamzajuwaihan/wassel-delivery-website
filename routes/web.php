@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ShowRestaurantsController;
@@ -14,6 +15,8 @@ use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileAdminController;
+use GuzzleHttp\Psr7\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -122,7 +125,7 @@ Route::resource('restaurantview', RestaurantsOwnerController::class);
 Route::resource('view-messages', ContactController::class);
 Route::resource('adminprofile', ProfileAdminController::class);
 // Route::resource('menu', RestaurantOwnerMenuController::class);
-
+Route::post('AddToCart',AddToCartController::class)->name('AddToCart');
 
 
 
