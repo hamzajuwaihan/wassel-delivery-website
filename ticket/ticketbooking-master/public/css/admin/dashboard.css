@@ -1,0 +1,22 @@
+.card,a{
+    margin-left: 100px;
+    margin-top :60px;
+    padding-top: 110px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+}
+.card,a:hover{
+    color:white;
+}
+.card{
+    background-color:#A66CFF;
+    display: inline-block;
+}
+.content{
+    position: relative;
+}
+.btn{
+ margin-top: 20px;
+ margin-left: 1500px;
+}
