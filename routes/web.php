@@ -151,6 +151,7 @@ Route::post('/checkout',CheckoutOrder::class)->name('checkout');
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
 
+
 Route::get('pastOrders',function(){
     return view('pastorders');
 })->name('pastOrders');
@@ -159,4 +160,5 @@ Route::get('pastOrders',function(){
 Route::get('search', [SearchController::class, 'index']);
 
 Route::get('/', [RestaurantIndexController::class, 'index'])->name('index');
+
 
