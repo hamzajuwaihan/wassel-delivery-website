@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Scout\Searchable;
 
 class Restaurant extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -60,4 +61,12 @@ class Restaurant extends Model
     // {
     //     return $this->hasOne(order-details::class);
     // }
+
+    public function toSearchableArray()
+    {
+        return [
+            'name' => $this->name,
+            'location' => $this->location
+        ];
+    }
 }

@@ -15,6 +15,8 @@ use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileAdminController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\RestaurantIndexController;
 use GuzzleHttp\Psr7\Request;
 
 /*
@@ -28,9 +30,9 @@ use GuzzleHttp\Psr7\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
 
 Route::get('/contactForm', function () {
     return view('contactForm');
@@ -145,3 +147,7 @@ Route::resource('addMeal',MealsController::class);
 //contact form
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+
+Route::get('search', [SearchController::class, 'index']);
+
+Route::get('/', [RestaurantIndexController::class, 'index'])->name('index');
