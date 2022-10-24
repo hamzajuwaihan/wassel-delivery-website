@@ -152,7 +152,7 @@ Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us
 
 
 Route::get('pastOrders',function(){
-    return view('pastorders');
+    return redirect()->route('myaccount.index');
 })->name('pastOrders');
 
 

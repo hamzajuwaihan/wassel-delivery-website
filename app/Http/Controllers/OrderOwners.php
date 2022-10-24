@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\order_detail;
 use App\Models\order_item;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,16 +18,13 @@ class OrderOwners extends Controller
      */
     public function index()
     {
-    
-    $order_info = DB::table('order_details')->join('users','order_details.user_id','=','users.id')
-        ->select('order_details.*', 'users.name')->where('order_details.restaurant_id','=',Auth::user()->restaurant_id)->get();
+
+        $order_info = DB::table('order_details')->join('users', 'order_details.user_id', '=', 'users.id')
+            ->select('order_details.*', 'users.name')->where('order_details.restaurant_id', '=', Auth::user()->restaurant_id)->get();
 
         return view('owner.all-orders', [
             'order_info' => $order_info
         ]);
-
-
-
     }
 
     /**
@@ -58,7 +56,6 @@ class OrderOwners extends Controller
      */
     public function show($id)
     {
-        
     }
 
     /**
@@ -69,8 +66,21 @@ class OrderOwners extends Controller
      */
     public function edit($id)
     {
+        $order = order_detail::find($id);
+        $user = User::find($order->user_id);
+        // $meals = DB::table('order_items')
+        //     ->join('order_details', 'order_details.id', '=', 'order_items.order_details_id')
+        //     ->select('order_items.meal_id', 'order_items.amount','order_details.id')
+        //     ->get();
+        $meals = order_item::get()->where('order_details_id','=',$order->id);
 
-  
+        
+        
+        return view('owner.edit-order', [
+            'order' => $order,
+            'name' => $user->name,
+            'meals' => $meals
+        ]);
     }
 
     /**
@@ -82,7 +92,11 @@ class OrderOwners extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        $order = order_detail::find($id);
+        $order->status = $request->status;
+        $order->save();
+        return redirect()->route('add-order.index');
     }
 
     /**
@@ -91,5 +105,4 @@ class OrderOwners extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
 }
