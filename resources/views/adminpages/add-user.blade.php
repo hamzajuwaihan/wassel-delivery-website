@@ -114,19 +114,19 @@
                                   </select> 
                                 </div>
                                 </div>
-
+                               
                                 <div class="col-12" id="choose" style="display: none ;">
                                     <label for="user_type">Choose Resturant</label>
                                     <div class="position-relative">
                                     <select  style=" width:200px; height:30px;">
                                         {{-- <option value="">select resturant</option> --}}
-                                        <option value="1">resturant-1</option>
-                                        <option value="2">resturant-2</option>
-                                        <option value="3">resturant-3</option>
+                                        @foreach ( $restaurants as $one_Restaurant)
+                                        <option value="{{ $one_Restaurant->restaurant_id }}">{{ $one_Restaurant->name }}</option>
+                                                                        @endforeach
+
                                     </select>
                                 </div>
                                 </div>
-
                                 
                                 <!-- <div class="col-12">
                                     <div class="form-group has-icon-left">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Restaurant;
+
 
 class UserController extends Controller
 {
@@ -16,7 +18,7 @@ class UserController extends Controller
     */
     public function index()
     {
-        $users = User::orderBy('id','desc')->paginate(5);
+        $users = User::all();
         return view('adminpages.users', compact('users'));
     }
 
@@ -26,8 +28,13 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('adminpages.add-user');
+    { 
+         $restaurants = Restaurant::orderBy('id', 'desc')->paginate(20);
+        return view('adminpages.add-user',
+    [
+        'restaurants'=>$restaurants
+    ]);
+      
     }
 
     /**

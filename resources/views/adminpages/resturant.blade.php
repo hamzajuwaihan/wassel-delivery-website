@@ -41,7 +41,7 @@
                         <tbody>
                             @foreach ($restaurants as $restaurant)
                                 <tr>
-                                    <td>{{ $restaurant->id }}</td>
+                                    <td>{{ ++$i }}           </td>
                                     
                                         <td><img src="/images/{{ $restaurant->image }}" width="100px" height="100px;"></td>
                                      <!-- <img class="avatar me-2" style="object-fit: cover" width="50" height="50"

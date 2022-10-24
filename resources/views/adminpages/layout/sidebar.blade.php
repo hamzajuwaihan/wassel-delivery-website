@@ -61,7 +61,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Wassel</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -158,7 +158,7 @@
               <ul class="menu-sub">
                  
                 <li class="menu-item">
-                  <a href="/add-user" class="menu-link">
+                  <a href="{{route('users.create')}}" class="menu-link">
                     <div data-i18n="Tabs &amp; Pills">Add User</div>
                   </a>
                 </li>

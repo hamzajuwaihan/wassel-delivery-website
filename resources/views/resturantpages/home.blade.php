@@ -52,7 +52,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block">John </span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>

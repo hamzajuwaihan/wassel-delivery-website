@@ -57,9 +57,9 @@ Route::get('/add-categories', function () {
 Route::get('/category', function () {
     return view('adminpages.category');
 });
-Route::get('/add-user', function () {
-    return view('adminpages.add-user');
-});
+// Route::get('/add-user', function () {
+//     return view('adminpages.add-user');
+// });
 Route::get('/users', function () {
     return view('adminpages.users');
 });

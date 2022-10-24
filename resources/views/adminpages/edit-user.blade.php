@@ -86,8 +86,15 @@
                                     <div class="form-group has-icon-left">
                                         <label for=" gender-id-icon"> type</label>
                                         <div class="position-relative">
-                                            <input type=" gender" name="type" value="{{ $user->type }}" class="form-control"
-                                                placeholder=" gender" id=" gender-id-icon">
+                                            {{-- <input type=" gender" name="type" value="{{ $user->type }}" class="form-control"
+                                                placeholder=" gender" id=" gender-id-icon"> --}}
+                                                <select name="type" style="width:200px; height:30px;" id = "type" value="{{ $user->type }}">
+                                   
+                                                    <option value="admin">admin</option>
+                                                    <option value="owner">owner</option>
+                                                    <option value="user">user</option>
+                                                    
+                                                  </select> 
                                             <div class="form-control-icon">
                                                 <i class="bi bi-map"></i>
                                             </div>
