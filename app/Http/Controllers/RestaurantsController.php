@@ -37,7 +37,7 @@ class RestaurantsController extends Controller
     //         print_r($restaurants);
     //         exit;
     // }
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -179,4 +179,5 @@ class RestaurantsController extends Controller
         return redirect()->route('dashboardrestaurants.index')
             ->with('success', 'restaurant deleted successfully');
     }
+
 }

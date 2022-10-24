@@ -9,11 +9,7 @@
                         <div class="card card-span  text-white rounded-3" style="height:400px;">
                             <img class="img-fluid rounded-3 "
                                 src="./images/{{ $restaurant->image }}" alt="..." style="height: 300px;"/>
-                            <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i
-                                        class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20%
-                                        off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i
-                                        class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span>
-                            </div>
+                            
                             <div class="card-body ps-0">
                                 <div class="d-flex align-items-center mb-3"><img class="img-fluid"
                                         src="assets/img/gallery/food-world-logo.png" alt="" />

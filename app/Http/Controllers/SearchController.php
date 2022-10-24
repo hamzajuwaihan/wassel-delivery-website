@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Menu;
+use App\Models\Meal;
   
 class SearchController extends Controller
 {
@@ -21,5 +23,21 @@ class SearchController extends Controller
         }
           
         return view('search', compact('restaurants'));
+    }
+
+    public function show($id)
+    {
+        $restaurant = Restaurant::find($id);
+        
+        $menu = Menu::find($id);
+        
+        // $menu = Menu::get()->where('restaurant_id','=',$id);
+        
+        $meals = Meal::get()->where('menu_id','=',$menu->restaurant_id);
+        
+        return view('SingleRestaurant', [
+            'restaurant' => $restaurant,
+            'meals'=>$meals
+        ]);
     }
 }
