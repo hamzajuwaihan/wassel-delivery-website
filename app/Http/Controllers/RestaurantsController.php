@@ -22,8 +22,7 @@ class RestaurantsController extends Controller
     {
         $restaurants = Restaurant::orderBy('id', 'desc')->paginate(20);
 
-        return view('adminpages.resturant', compact('restaurants'))->with('i', (request()->input('page', 1) - 1) * 20);
-        ;
+        return view('adminpages.resturant', compact('restaurants'))->with('i', (request()->input('page', 1) - 1) * 20);;
     }
     //     public function restaurantsGet()
     // {
@@ -48,9 +47,6 @@ class RestaurantsController extends Controller
             ->join('categories', 'categories.id', '=', 'restaurants.category_id')
             ->select('restaurants.*', 'categories.name')
             ->get()->toArray();
-        echo '<pre>';
-        print_r($restaurants);
-        exit;
         $restaurants = Restaurant::all();
         $categories = Category::all();
         return view('adminpages.add-resturant');
@@ -72,7 +68,7 @@ class RestaurantsController extends Controller
             // 'longitude' => 'required',
             // 'delivery_fee' => 'delivery_fee',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
-            
+
         ]);
 
         $file_name = time() . '.' . request()->image->getClientOriginalExtension();
@@ -98,7 +94,7 @@ class RestaurantsController extends Controller
                 'longitude' => $request->longitude,
                 'delivery_fee' => $request->delivery_fee,
                 'image' => $file_name,
-                'category_id'=>$request->category
+                'category_id' => $request->category
             ]
         );
         DB::table('menus')->insert([
