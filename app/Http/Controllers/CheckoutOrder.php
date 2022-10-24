@@ -21,13 +21,15 @@ class CheckoutOrder extends Controller
         $restaurant_id = $request->restaurant_id;
         $total = $request->total;
         $note = $request->note;
-       
+        $address = $request->address;
         $id = DB::table('order_details')->insertGetId(
             [
                 'restaurant_id' => $restaurant_id,
                 'user_id' => $user_id,
                 'total' => $total,
                 'note' => $note,
+                'address' => $address,
+                'phone'=> Auth::user()->phone, 
                 'created_at' => now(),
                 'updated_at' => now()
             ]

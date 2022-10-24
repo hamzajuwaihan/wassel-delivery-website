@@ -16,6 +16,7 @@ use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DeleteFromCart;
+use App\Http\Controllers\OrderOwners;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RestaurantIndexController;
@@ -105,9 +106,6 @@ Route::get('/categories', function () {
     return view('resturantpages.category');
 });
 
-Route::get('/add-order', function () {
-    return view('resturantpages.add-order');
-});
 Route::get('/all-orders', function () {
     return view('resturantpages.all-orders');
 });
@@ -162,3 +160,4 @@ Route::get('search', [SearchController::class, 'index']);
 Route::get('/', [RestaurantIndexController::class, 'index'])->name('index');
 
 
+Route::resource('/add-order',OrderOwners::class);
