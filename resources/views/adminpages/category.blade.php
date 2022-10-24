@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <div class="d-flex flex-column align-items-center gap-1">
-                                        <h2 class="mb-2">40</h2>
+                                        <h2 class="mb-2">{{\DB::table('restaurants')->count()}}</h2>
                                         <span>Total Restaurant They serve Food </span>
                                     </div>
                                     <div id="orderStatisticsChart"></div>
@@ -94,12 +94,12 @@
                                     </li>
                                 </ul>
                             </div> 
-                             <form style="display: inline-block" method="POST"action="{{ route('category.destroy', $category->id) }}"onsubmit="return confirm('Are you sure?');">
-                    <a class="btn btn-primary" href="{{ route('category.edit', $category->id) }}" >Edit</a>
+                             <form style="display: inline-block " method="POST"action="{{ route('category.destroy', $category->id) }}"onsubmit="return confirm('Are you sure?');">
+                    <a class="btn btn-primary mx-3 mb-2" href="{{ route('category.edit', $category->id) }}" >Edit</a>
                       <!-- Delete button -->
                       @csrf
                       @method('DELETE')
-                        <button class="btn text-primary">Delete<i class="far fa-trash-alt"></i></button>
+                        <button class="btn text-primary  mb-2">Delete<i class="far fa-trash-alt"></i></button>
                     </form> 
                         </div>
                     </div>
