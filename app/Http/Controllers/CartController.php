@@ -10,28 +10,34 @@ class CartController extends Controller
 {
     public function index()
     {
-
+        
+        // dd(count(session()->get('order.meals')));
         if (session()->has('order')) {
             $array = array();
-            $ids = '';
+            $ids = array();
             foreach (session()->get('order.meals') as $key => $value) {
-                $ids .= $key;
+                array_push($ids,$key);
                 $array[$key] = $value;
             }
-            $idsForQuery = str_split($ids);
+            
+
             $meals = DB::table('meals')
-                ->whereIn('id', $idsForQuery)
+                ->whereIn('id', $ids)
                 ->get();
+            
             $price = 0;
             foreach ($meals as $meal) {
                 $price += $meal->price * $value;
             }
-
-            $restaurant = Restaurant::find($meals[0]->id);
-
+            $restaurant = DB::table('menus')
+            ->join('restaurants', 'menus.restaurant_id', '=', 'restaurants.id')
+            ->select('restaurants.*')
+            ->where('menus.id','=',$meals[0]->menu_id)
+            ->get();
+            // dd($restaurant[0]);
             return view('cart', [
                 'meals' => $meals,
-                'restaurant' => $restaurant,
+                'restaurant' => $restaurant[0],
                 'price' => $price
             ]);
         }else{

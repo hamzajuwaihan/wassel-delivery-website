@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutOrder;
 use App\Http\Controllers\MealsController;
 //restaurant owner controller
 use App\Http\Controllers\RestaurantsOwnerController;
 use App\Http\Controllers\RestaurantOwnerMenuController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DeleteFromCart;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RestaurantIndexController;
@@ -128,6 +130,7 @@ Route::resource('view-messages', ContactController::class);
 Route::resource('adminprofile', ProfileAdminController::class);
 // Route::resource('menu', RestaurantOwnerMenuController::class);
 Route::post('AddToCart',AddToCartController::class)->name('AddToCart');
+Route::post('DeleteFromCart',DeleteFromCart::class)->name('DeleteFromCart');
 
 
 
@@ -141,13 +144,19 @@ Route::post('/session', SessionController::class);
 Route::resource('restaurants',ShowRestaurantsController::class);
 
 Route::resource('addMeal',MealsController::class);
-
+Route::post('/checkout',CheckoutOrder::class)->name('checkout');
 
 
 //contact form
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
 
+Route::get('pastOrders',function(){
+    return view('pastorders');
+})->name('pastOrders');
+
+
 Route::get('search', [SearchController::class, 'index']);
 
 Route::get('/', [RestaurantIndexController::class, 'index'])->name('index');
+

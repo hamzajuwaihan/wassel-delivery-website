@@ -33,7 +33,7 @@ class ContactController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ]);
-  
+        
         Contact::create($request->all());
   
         return redirect()->back()
