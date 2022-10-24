@@ -35,7 +35,7 @@ class RestaurantsController extends Controller
     //         print_r($restaurants);
     //         exit;
     // }
-
+    }
 
     /**
      * Show the form for creating a new resource.
