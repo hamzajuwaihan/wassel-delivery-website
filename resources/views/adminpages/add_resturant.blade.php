@@ -70,7 +70,7 @@
                                 <div class="form-group has-icon-left">
                                         <label for="location-id-icon">LONGITUDE</label>
                                         <div class="position-relative">
-                                            <input type="text" name="longitude" value="" class="form-control" placeholder="location"
+                                            <input type="text" name="longitude" value="" class="form-control" placeholder="longitude"
                                                 id="location-id-icon">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
@@ -81,7 +81,7 @@
                                 <div class="form-group has-icon-left">
                                         <label for="location-id-icon">LATITUDE</label>
                                         <div class="position-relative">
-                                            <input type="text" name="latitude" value="" class="form-control" placeholder="location"
+                                            <input type="text" name="latitude" value="" class="form-control" placeholder="latitude"
                                                 id="location-id-icon">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
@@ -97,6 +97,7 @@
                                             placeholder="" value="0" step="0.01" />
                                     </div>
                                 </div>
+                             
                                 <label for="category-id-icon"name="category">category name</label><br>
                                 <select name="category">
                                     
@@ -105,6 +106,7 @@
                                     <option name="category" value="3">drinks</option>
                                   
                                   </select>
+                                
                                   
 
 

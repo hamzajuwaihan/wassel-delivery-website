@@ -57,7 +57,7 @@
                                         <form style="display: inline-block" method="POST"
                                             action="{{ route('view-messages.destroy',$message->id) }}"onsubmit="return confirm('Are you sure?');">
 
-                                            <a class="btn btn-info" href="{{ route('view-messages.show', $message->id) }}">Show</a>
+                                            <a class="btn btn-primary" href="{{ route('view-messages.show', $message->id) }}">Show</a>
 
 
                                           <!-- Delete button -->

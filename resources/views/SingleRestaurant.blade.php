@@ -12,12 +12,12 @@
         <div class="row justify-content-center">
 
             <div class="col-sm-6 col-md-4 col-lg-6 h-100 mb-5">
-                <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100"
-                        src="/images/{{ $restaurant->image }}" alt="...">
+                <div class=" card card-span  text-white text-center rounded-3"><img class="rounded img-fluid rounded-3 "
+                        src="/images/{{ $restaurant->image }}" alt="..." style="height: 350px;">
                     
                     <div class="card-body ps-0 ">
-                        <div class="d-flex align-items-center mb-3 text-center"><img class="img-fluid"
-                                src="assets/img/gallery/kuakata-logo.png" alt="">
+                        <div class="d-flex align-items-center mb-3 text-center"><img class="img-fluid" 
+                                src="assets/img/gallery/kuakata-logo.png"   alt=""  >
                             <div class="flex-1 ms-3">
                                 <h4 class="mb-0 fw-bold text-1000 text-center">{{ $restaurant->name }}</h4><span
                                     class="text-primary fs--1 me-1"><svg class="svg-inline--fa fa-star fa-w-18"

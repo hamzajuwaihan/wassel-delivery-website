@@ -26,32 +26,36 @@
                                 <th>User Name</th>
                                 <th>User location</th>
                                 <th>User Phone</th>
-                                <th>Meal Number</th>
+                               
                                 <th>Total</th>
-                                <th>Notes</th> 
-                                <th>Status</th>
-                                <th>Adjustments</th>
+                              
+                                
+                                <th>Status</th> 
+                                 <th>Note</th>
+                                <th></th>
 
                             </tr>
                         </thead>
                         <tbody>
-                          
+
+                            {{$order_info }}
+                            @foreach ($order_info as $order)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
+                                    <td>{{ $order->id }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->address}}</td>
+                                    <td>{{ $order->phone}}</td>
+                                    <td>{{ $order->total}}</td>
+                                    <td>{{ $order->status}}</td>
+                                    <td>{{ $order->note}}</td>
+                                  
+                                        @endforeach
                                         <!-- edit button -->
                                         <a href="" class="ms-3 "><i class="fas fa-user-edit"></i></a>
                                         <form style="display: inline-block" method="POST"
                                             action="">
                                           <!-- Delete button -->
-                                            <button class="btn text-primary"><i class="far fa-trash-alt"></i></button>
+                                           
                                         </form>
                                     </td>
                                 </tr>
