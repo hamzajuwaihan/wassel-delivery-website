@@ -8,7 +8,7 @@
                     <a href="{{ route('restaurants.show',$restaurant->id) }}">
                         <div class="card card-span  text-white rounded-3" style="height:400px;">
                             <img class="img-fluid rounded-3 "
-                                src="./images/{{ $restaurant->image }}" alt="..." style="height: 300px;"/>
+                                src="./images/{{ $restaurant->image }}" alt="..." style="height: 220px;"/>
                             
                             <div class="card-body ps-0">
                                 <div class="d-flex align-items-center mb-3"><img class="img-fluid"

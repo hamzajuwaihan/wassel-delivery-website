@@ -86,12 +86,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                
        
                           
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
-                                        <label for="password-id-icon">Image</label>
+                                        <label for="password-id-icon">Upload Image</label>
                                         <div class="position-relative">
                                             <label for="image">
                                                 <img src="/images/{{ $restaurant->image }}" alt="profile_photo"
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
-                                
+                                </div>
                                 </div>
                             </div>
                         </div>

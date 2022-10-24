@@ -75,10 +75,10 @@
                 @foreach ($restaurants as $restaurant)
                 <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4" >
                     
-                    <div class="card card-span h-100" style="height: 250px"> 
+                    <div class="card card-span h-100" style="height: 150px"> 
                        
-                        <div class="position-relative"> <img class="img-fluid rounded-3 w-100"
-                                src="images/{{ $restaurant->image }}" alt="..." style="height: 300px;" />
+                        <div class="mx-2 position-relative"> <img class="img-fluid rounded-3 w-100"
+                                src="images/{{ $restaurant->image }}" alt="..." style="height: 200px;" />
                             <div class="card-actions">
                                 <div class="badge badge-foodwagon bg-primary p-4">
                                     <div class="d-flex flex-between-center">

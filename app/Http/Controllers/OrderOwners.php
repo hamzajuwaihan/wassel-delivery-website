@@ -6,6 +6,7 @@ use App\Models\order_detail;
 use App\Models\order_item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderOwners extends Controller
 {
@@ -16,11 +17,16 @@ class OrderOwners extends Controller
      */
     public function index()
     {
-        $orders = order_detail::where('restaurant_id','=',Auth::user()->restaurant_id)->get();
-        
+    
+    $order_info = DB::table('order_details')->join('users','order_details.user_id','=','users.id')
+        ->select('order_details.*', 'users.name')->where('order_details.restaurant_id','=',Auth::user()->restaurant_id)->get();
+
         return view('owner.all-orders', [
-            'orders' => $orders
+            'order_info' => $order_info
         ]);
+
+
+
     }
 
     /**
@@ -52,7 +58,7 @@ class OrderOwners extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -63,7 +69,8 @@ class OrderOwners extends Controller
      */
     public function edit($id)
     {
-        //
+
+  
     }
 
     /**
@@ -84,8 +91,5 @@ class OrderOwners extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+   
 }
