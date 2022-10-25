@@ -18,7 +18,7 @@ class ShowRestaurantsController extends Controller
      */
     public function index()
     {
-
+        
 
         $restaurants = Restaurant::all();
         return view('restaurants', [

@@ -151,7 +151,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            @if (session()->has('order.meals'))
+                            @if (session()->has('order.meals') && Auth::check())
                                 <tr>
                                     <td colspan="2">
                                         <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}">
