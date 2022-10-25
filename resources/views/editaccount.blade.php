@@ -57,7 +57,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-0">Phone</p>
+                                        {{-- <p class="mb-0">Phone</p> --}}
                                         <label class="mb-0" for="phone">Phone</label>
                                     </div>
                                     <div class="col-sm-9">

@@ -86,19 +86,17 @@
         <!-- / Navbar -->
         <!-- Content -->
         <div class="content-wrapper ">
-            <div class="page-heading" style="margin-left: 300px; width:1200px">
+            <div class="page-heading" style="margin-left: 400px; width:1200px">
                 <div class="page-title">
                     <h3 class="m-5">Restaurant Details</h3>
 
-                    <div class="row d-flex align-items-center justify-content-start" style="flex-wrap: wrap">
-
-
+                  
                         @if ($message = Session::get('success'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-success"  style="margin-right: 600px; width:380px ">
                                 <p>{{ $message }}</p>
                             </div>
                         @endif
-
+                   <div class="row d-flex align-items-center justify-content-start" style="flex-wrap: wrap">
                         <!-- Food and Dining -->
                         <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
                             <div class="card h-100">
