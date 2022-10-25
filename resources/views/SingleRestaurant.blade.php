@@ -65,7 +65,7 @@
                                             <h5 class="fs-5 fw-bold text-1000 text-truncate mb-1">{{ $meal->name }}</h5>
                                             <div>
                                                 {{-- //meal price --}}
-                                            </div><span class="text-1000 fw-bold fs-3 mb-2">$4.00</span>
+                                            </div><span class="text-1000 fw-bold fs-3 mb-2">${{ $meal->price }}</span>
 
                                         </div>
                                     </div>
