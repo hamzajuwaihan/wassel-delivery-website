@@ -78,18 +78,14 @@
                     <div class="card card-span h-100" style="height: 150px"> 
                        
                         <div class="mx-2 position-relative"> <img class="img-fluid rounded-3 w-100"
-                                src="images/{{ $restaurant->image }}" alt="..." style="height: 200px;" />
+                                src="images/{{ $restaurant->image }}" alt="..." style="height: 220px;" />
                             <div class="card-actions">
-                                <div class="badge badge-foodwagon bg-primary p-4">
-                                    <div class="d-flex flex-between-center">
-                                       
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                        
                         <div class="card-body px-0">
-                            <h5 class="fw-bold text-1000 text-truncate">{{ $restaurant->name }}</h5>
+                            <h5 class="fw-bold text-1000 text-truncate">&nbsp;&nbsp;&nbsp;{{ $restaurant->name }}</h5>
                         </div><a class="stretched-link" href="#"></a>
                     </div>
                 </div> 
@@ -263,59 +259,7 @@
     <!-- <section> close ============================-->
     <!-- ============================================-->
 
-    <section class="py-0 bg-primary-gradient">
 
-        <div class="container">
-            <div class="row justify-content-center g-0">
-                <div class="col-xl-9">
-                    <div class="col-lg-9 text-center mx-auto mb-3 mb-md-5 mt-4">
-                        <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-4"> Have an Query? We're here to help</h5>
-                        <a href="contactForm"><a class="btn btn-lg btn-primary"
-                            href="contactForm">Contact Us </a></a>
-                        {{-- <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary"
-                            href="#!"><i class="fas fa-chevron-right ms-2"> </i></a></div> --}}
-                </div>
- 
-                    </div>
-                   
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 mb-6">
-
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/smiley-removebg-preview.png"
-                                    height="112" alt="..." />
-                                {{-- <h5 class="mt-4 fw-bold">Select location</h5>
-                                <p class="mb-md-0">Choose the location where your food will be delivered.</p> --}}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 mb-6">
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/confused-removebg-preview.png"
-                                    height="112" alt="..." />
-                                {{-- <h5 class="mt-4 fw-bold">Choose order</h5>
-                                <p class="mb-md-0">Check over hundreds of menus to pick your favorite food</p> --}}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 mb-6">
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/unhappy-icon-13-removebg-preview.png"
-                                    height="112" alt="..." />
-                                {{-- <h5 class="mt-4 fw-bold">Pay advanced</h5>
-                                <p class="mb-md-0">It's quick, safe, and simple. Select several methods of payment
-                                </p> --}}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 mb-6">
-                            <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/hungry.png"
-                                    height="112" alt="..." />
-                                {{-- <h5 class="mt-4 fw-bold">Enjoy meals</h5>
-                                <p class="mb-md-0">Food is made and delivered directly to your home.</p> --}}
-                            </div>
-                        </div>
-                   
-                    </div>
-                </div>
-            </div>
-        </div><!-- end of .container-->
-
-    </section>
 
     <section class="py-0">
         <div class="bg-holder"
@@ -326,8 +270,8 @@
         <div class="container">
             <div class="row flex-center">
                 <div class="col-xxl-9 py-7 text-center">
-                    <h1 class="fw-bold mb-4 text-white fs-6">Are you ready to order <br />with the best deals?
-                    </h1><a class="btn btn-danger" href="restaurants"> PROCEED TO ORDER<i
+                    <h1 class="fw-bold mb-4 text-white fs-6">Have an Query?<br /> We're here to help 
+                    </h1><a class="btn btn-danger" href="contactForm">Contact Us <i
                             class="fas fa-chevron-right ms-2"></i></a>
                 </div>
             </div>

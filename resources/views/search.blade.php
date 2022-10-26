@@ -32,11 +32,11 @@
                         <img class="img-fluid rounded-3 " src="./images/{{ $restaurant->image }}" alt="..." style="height: 300px;"/>
                         <div class="card-body ps-0">
                             <div class="d-flex align-items-center mb-3"><img class="img-fluid"
-                                    src="assets/img/gallery/food-world-logo.png" alt="" />
+                                src="assets/img/gallery/Ce.JPG" width="50px" height="50px" alt="" />
                                 <div class="flex-1 ms-3">
                                     <h5 class="mb-0 fw-bold text-1000"> {{ $restaurant->name }}</h5><span
-                                        class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span
-                                        class="mb-0 text-primary">46</span>
+                                        class="text-primary fs--1 me-1"><span
+                                        class="mb-0 text-primary">{{ $restaurant->location }}</span>
                                 </div>
                             </div>
 

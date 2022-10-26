@@ -19,7 +19,7 @@
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="images\user-picture.png" alt="avatar" class="rounded-circle img-fluid"
+                            <img src="/images/{{ $user->image }}" alt="avatar" class="rounded-circle img-fluid"
                                 style="width: 150px;">
                             <h5 class="my-3">{{ $user->name }}</h5>
                             <div class="d-flex justify-content-center mb-2">
@@ -119,3 +119,5 @@
         </div>
     </section>
 @endsection
+
+

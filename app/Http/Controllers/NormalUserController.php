@@ -85,7 +85,21 @@ class NormalUserController extends Controller
         $user->name= $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->save();
+        
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        } else {
+            unset($input['image']);
+        }
+
+
+
+        $user->update($input);
+     
         return redirect()->route('myaccount.index');
     }
 
