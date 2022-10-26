@@ -72,7 +72,7 @@
                         <div class="col">
                             <div class="card mb-4 mb-md-0">
                                 <div class="card-body">
-                                    <p class="mb-4">Past <span class="text-primary font-italic me-1">Orders</span></p>
+                                    <p class="mb-4"><span class="text-primary font-italic me-1">Past Orders</span></p>
                                     <table class="table">
                                         <thead>
                                             <tr>
