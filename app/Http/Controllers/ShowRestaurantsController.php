@@ -18,8 +18,19 @@ class ShowRestaurantsController extends Controller
      */
     public function index()
     {
-        
-
+        // $query = Restaurant::get()->where('status', '=', 'Available');
+        // $restaurants = [];
+        // $maxDistance = 7000;
+        // foreach ($query as $restaurant) {
+        //     $response = Http::get('https://maps.googleapis.com/maps/api/distancematrix/json?destinations=' . session()->get('latitude') . '%2C' . session()->get('Longitude') . '&origins=' . $restaurant->latitude . '%2C' . $restaurant->longitude . '&key=YOUR_APIKEY')['rows'][0];
+        //     $distanceValue = $response['elements'][0]['distance']['value'];
+        //     $distanceText = $response['elements'][0]['distance']['text'];
+        //     if ($distanceValue <= $maxDistance) {
+        //         $restaurant['distanceValue'] = $distanceValue;
+        //         $restaurant['distanceText'] = $distanceText;
+        //         array_push($restaurants, $restaurant);
+        //     }
+        // }
         $restaurants = Restaurant::all();
         return view('restaurants', [
             'restaurants' => $restaurants
@@ -55,16 +66,16 @@ class ShowRestaurantsController extends Controller
     public function show($id)
     {
         $restaurant = Restaurant::find($id);
-        
+
         $menu = Menu::find($id);
-        
+
         // $menu = Menu::get()->where('restaurant_id','=',$id);
-        
-        $meals = Meal::get()->where('menu_id','=',$menu->restaurant_id);
-        
+
+        $meals = Meal::get()->where('menu_id', '=', $menu->restaurant_id);
+
         return view('SingleRestaurant', [
             'restaurant' => $restaurant,
-            'meals'=>$meals
+            'meals' => $meals
         ]);
     }
 
